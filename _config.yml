@@ -36,9 +36,9 @@ substack_username: andywoodruff6
 
 # Additional icon links
 additional_links:
-# - title: Link name
-#   icon: Font Awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-#   url: Link url (eg. https://google.com)
+- title: LinkedIn
+  icon: fab fa-linkedin
+  url: https://www.linkedin.com/in/andrew-woodruff-72b70075/
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
 #   url: Link url (eg. https://google.com)
@@ -65,26 +65,20 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        border: weak  # Value of `weak` will display a weak border below this item. # Any 
-                      # other value (or no value) means no border will be displayed
-        title: Project name
-        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        link_text: Link Text
+        border: weak
+        title: Network App
         additional_links:
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          - title:  Github page for project
             icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        quote: >
-          Short overview of the project (optional)
+            url: https://github.com/andywoodruff6/Networking_App
+        # quote: >
+        #   Short overview of the project (optional)
         description: | # this will include new lines to allow paragraphs
           Description about the work on/with the project
       - layout: left
         border: weak  # Value of `weak` will display a weak border below this item. # Any 
                       # other value (or no value) means no border will be displayed
-        title: Project name
+        title: Blogging
         link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
         link_text: Link Text
         additional_links:
@@ -106,7 +100,7 @@ content:
         title: Alliant Energy
         sub_title: Strategic Project Manager
         caption: January 2023 - present
-        link: https://www.alliantenergy.com/
+        # link: https://www.alliantenergy.com/
         quote: >
           Alliant Energy Corporation provides regulated energy service to 995,000 electric and 425,000 natural gas retail customers across Iowa and Wisconsin.
         description: | # this will include new lines to allow paragraphs
@@ -169,6 +163,11 @@ content:
         caption: Aug. 2021
         description: | # this will include new lines to allow paragraphs
           Six Sigma Green Belt Certification is a globally recognized certification that equips the candidates and professionals with numerous measures, skills, and controls that are essential for handling and ensuring a smooth flow of processes in organizations.
+      - layout: left
+        title: Atala Prism 101, 102, and 103
+        caption: Aug. 2022
+        description: | # this will include new lines to allow paragraphs
+          Atala PRISM is a decentralized identity solution that allows users to create and manage their digital identities. Atala is secured by the cardano blockchain and allows for identity interactions with smart contracts. 101 provides The foundational principles and concepts of self-sovereign identity (SSI). 102 covers building applications with Atala PRISM. 103 covers a foundation in designing human-centric solutions for decentralized ecosystems. 
   - title: Education
     layout: list
     content:
