@@ -85,31 +85,92 @@ content:
     layout: list
     content:
       - layout: right
-        title: Company name
-        sub_title: Job title
-        caption: Date Range (eg. November 2016 - present)
-        link: Link to company (optional)
+        title: Alliant Energy
+        sub_title: Strategic Project Manager
+        caption: January 2023 - present
+        link: https://www.alliantenergy.com/
         quote: >
-          Short description of the company (optional)
+          Alliant Energy Corporation provides regulated energy service to 995,000 electric and 425,000 natural gas retail customers across Iowa and Wisconsin.
         description: | # this will include new lines to allow paragraphs
-          Description of role
+          - Worked on large projects critical to modernizing the company.
+          - Deploying IBM Maximo with a team of 200+ people
+          - Managed 6 different sub teams.  
+      - layout: right
+        title: Foundry Digital
+        sub_title: Product Owner
+        caption: 2022-2022
+        # link: Link to company (optional)
+        quote: >
+          Foundry Digital is the leading Bitcoin mining pool in North America, backed by Digital Currency Group.
+        description: | # this will include new lines to allow paragraphs
+          - Lead a Competitive and Market analysis for a potential new product line
+          - Lead a team of developers building out an OTC brokerage marketplace
+          - Lead scrum ceremonies and delivered monthly road map presentations
+          - Used productivity tools such as JIRA, GitLab, Confluence, and Miro
+          - Lead a new project initiative focused on mining pool profitability using AWS
+      - layout: right
+        title: Upstate Interactive
+        sub_title: Smart Contract Engineer
+        caption: 2021 - 2022
+        # link: Link to company (optional)
+        quote: >
+          Upstate Interactive is a contract software development company that specializes in building Ethereum smart contracts and websites for businesses.
+        description: | # this will include new lines to allow paragraphs
+          - Developed Smart Contracts in Solidity, utilizing Hardhat and Node.Js
+          - Knowledgeable on the underlying technology of Bitcoin, Ethereum, and Cardano
+          - Worked with Clients and Senior Devs to build advanced solutions
+          - Used Notion and GitHub Projects to manage project workflow 
+      - layout: right
+        title: Regal Beloit
+        sub_title: Application Engineer
+        caption: 2018 - 2021
+        # link: Link to company (optional)
+        quote: >
+          Regal Beloit Corporation is a leading manufacturer of electric motors serving markets throughout the world.
+        description: | # this will include new lines to allow paragraphs
+          - Lead customer driven projects, ensuring scope, timeline and budget were met
+          - Lead New Product Development for four new blower products
+          - Applied critical thinking to find the best solutions to complex multi-department problems
+          - Compiled, evaluated, and presented test data to internal and external stakeholders
+  - title: Certifications
+    layout: list
+    content:
+      - layout: left
+        title: Project Management Professional
+        sub_title: PMP
+        caption: Nov. 2023
+        # quote: >
+        #   Short institution or course description (optional)
+        description: | # this will include new lines to allow paragraphs
+          The PMP is the gold standard of project management certification. Recognized and demanded by organizations worldwide, the PMP validates your competence to perform in the role of a project manager, leading and directing projects and teams.
+      - layout: left
+        title: Six Sigma Green Belt
+        caption: Aug. 2021
+        description: | # this will include new lines to allow paragraphs
+          Six Sigma Green Belt Certification is a globally recognized certification that equips the candidates and professionals with numerous measures, skills, and controls that are essential for handling and ensuring a smooth flow of processes in organizations.
   - title: Education
     layout: list
     content:
       - layout: top-right
-        title: Institution name
-        sub_title: Qualifications (eg. BA Performing Arts)
-        caption: Date Range (eg. 2016 - 2019)
-        quote: >
-          Short institution or course description (optional)
+        title: Ohio Northern University
+        sub_title: Bachelors of Science in Mechanical Engineering
+        caption: 2012 - 2016
+        # quote: >
+        #   Short institution or course description (optional)
         description: | # this will include new lines to allow paragraphs
-          Description of qualification
+          At Ohio Northern I was involved in Human Powered Vehicle and the American Society of Mechanical Engineers. Course work was heavily focused on collaboration, group projects and presentations.
   - title: A Little More About Me
     layout: text
     content: | # this will include new lines to allow paragraphs
-      This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+      ## Interests
+      - Cycling (road and cyclocross)
+      - Board games
+      - Pickleball
+      - Factory Building Games
 
-      Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+      ## Leadership Experience
+      - Coach and Board Member of Team Dayton Cycling Club (3 years)
+      - Coach of Fair Valley Swim Team (6 years)
 
 # Footer
 footer_show_references: true
