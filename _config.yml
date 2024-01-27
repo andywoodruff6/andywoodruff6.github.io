@@ -10,7 +10,7 @@ name: Andrew Woodruff
 title: Project Manager
 email: andywoodruff6@gmail.com
 # email_title: Email (Email title override)
-phone: Your phone number (optional)
+# phone: Your phone number (optional)
 # phone_title: Phone (Phone title override)
 website: https://andywoodruff6.github.io/
 # website_title: Web (Website title override)
@@ -21,6 +21,7 @@ darkmode: false
 # Social links
 twitter_username: WoodruffAndy
 github_username:  andywoodruff6
+substack_username: andywoodruff6
 #stackoverflow_username: "00000001"
 #dribbble_username: jekyll
 #facebook_username: jekyll
@@ -50,7 +51,7 @@ additional_links:
 
 # About Section
 # about_title: About Me (Use this to override about section title)
-about_profile_image: Directory of profile image (eg. images/profile.jpg)
+about_profile_image: images/profile_pic.jpg
 about_content: | # this will include new lines to allow paragraphs
   Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 
