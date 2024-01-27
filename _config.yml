@@ -84,7 +84,7 @@ content:
   - title: Experience
     layout: list
     content:
-      - layout: right
+      - layout: left
         title: Alliant Energy
         sub_title: Strategic Project Manager
         caption: January 2023 - present
@@ -95,7 +95,7 @@ content:
           - Worked on large projects critical to modernizing the company.
           - Deploying IBM Maximo with a team of 200+ people
           - Managed 6 different sub teams.  
-      - layout: right
+      - layout: left
         title: Foundry Digital
         sub_title: Product Owner
         caption: 2022-2022
@@ -108,7 +108,7 @@ content:
           - Lead scrum ceremonies and delivered monthly road map presentations
           - Used productivity tools such as JIRA, GitLab, Confluence, and Miro
           - Lead a new project initiative focused on mining pool profitability using AWS
-      - layout: right
+      - layout: left
         title: Upstate Interactive
         sub_title: Smart Contract Engineer
         caption: 2021 - 2022
@@ -120,7 +120,7 @@ content:
           - Knowledgeable on the underlying technology of Bitcoin, Ethereum, and Cardano
           - Worked with Clients and Senior Devs to build advanced solutions
           - Used Notion and GitHub Projects to manage project workflow 
-      - layout: right
+      - layout: left
         title: Regal Beloit
         sub_title: Application Engineer
         caption: 2018 - 2021
@@ -137,7 +137,7 @@ content:
     content:
       - layout: left
         title: Project Management Professional
-        sub_title: PMP
+        # sub_title: PMP
         caption: Nov. 2023
         # quote: >
         #   Short institution or course description (optional)
@@ -173,7 +173,7 @@ content:
       - Coach of Fair Valley Swim Team (6 years)
 
 # Footer
-footer_show_references: true
+footer_show_references: false
 # references_title: References on request (Override references text)
 
 # Build settings
