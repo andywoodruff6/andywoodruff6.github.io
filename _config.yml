@@ -102,6 +102,7 @@ content:
     layout: list
     content:
       - layout: left
+        border: weak
         title: Alliant Energy
         sub_title: Strategic Project Manager
         caption: January 2023 - present
@@ -113,6 +114,7 @@ content:
           - Deploying IBM Maximo with a team of 200+ people
           - Managed 6 different sub teams.  
       - layout: left
+        border: weak
         title: Foundry Digital
         sub_title: Product Owner
         caption: 2022-2022
@@ -126,6 +128,7 @@ content:
           - Used productivity tools such as JIRA, GitLab, Confluence, and Miro
           - Lead a new project initiative focused on mining pool profitability using AWS
       - layout: left
+        border: weak
         title: Upstate Interactive
         sub_title: Smart Contract Engineer
         caption: 2021 - 2022
@@ -138,6 +141,7 @@ content:
           - Worked with Clients and Senior Devs to build advanced solutions
           - Used Notion and GitHub Projects to manage project workflow 
       - layout: left
+        border: weak
         title: Regal Beloit
         sub_title: Application Engineer
         caption: 2018 - 2021
