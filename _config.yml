@@ -66,7 +66,7 @@ content:
     content:
       - layout: left
         border: weak
-        title: Network App
+        title: Connecti
         additional_links:
           - title:  Github page for project
             icon: fab fa-github
@@ -74,24 +74,17 @@ content:
         # quote: >
         #   Short overview of the project (optional)
         description: | # this will include new lines to allow paragraphs
-          Description about the work on/with the project
+          Connecti is a desktop app that allows users to log social interactions that they have with their friends and colleagues and then provides reminders if too much time has past since the last time you connected. The app is built using Tauri, Vue and Rust. 
       - layout: left
         border: weak  # Value of `weak` will display a weak border below this item. # Any 
                       # other value (or no value) means no border will be displayed
-        title: Blogging
-        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        link_text: Link Text
-        additional_links:
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        quote: >
-          Short overview of the project (optional)
+        title: Trust over IP
+        link: https://trustoverip.org/
+        link_text: https://trustoverip.org/
+        # quote: >
+        #   Short overview of the project (optional)
         description: | # this will include new lines to allow paragraphs
-          Description about the work on/with the project
+          Trust over IP is a project that is working to create a new standard for digital identity. The project is backed by the Linux Foundation and has over 100 members. I am a member of the technology Stack Working Group and a co-chair of the Human Experience Working Group.
   - title: Experience
     layout: list
     content:
@@ -189,6 +182,7 @@ content:
       - Factory Building Games
 
       ## Leadership Experience
+      - Co-Chair of the Human Experience Working Group for Trust over IP 
       - Coach and Board Member of Team Dayton Cycling Club (3 years)
       - Coach of Fair Valley Swim Team (6 years)
 
