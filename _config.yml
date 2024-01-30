@@ -75,6 +75,10 @@ content:
         #   Short overview of the project (optional)
         description: | # this will include new lines to allow paragraphs
           Connecti is a desktop app that allows users to log social interactions that they have with their friends and colleagues and then provides reminders if too much time has past since the last time you connected. The app is built using Tauri, Vue and Rust. 
+          ![Connecti Home](images/connecti-home.png)
+          From the home page you can see the next two people you should contact as well as the last thing you discussed with them. In the bottom right you can easily add a new interaction.
+          ![Connecti Calendar](images/connecti-calendar.png)
+          The calendar page allows you to see all of your interactions sorted by the next contact date. Selecting any individual will take you to their profile page where you can see all of your interactions with them.
       - layout: left
         border: weak  # Value of `weak` will display a weak border below this item. # Any 
                       # other value (or no value) means no border will be displayed
