@@ -102,9 +102,10 @@ content:
         quote: >
           Alliant Energy Corporation provides regulated energy service to 995,000 electric and 425,000 natural gas retail customers across Iowa and Wisconsin.
         description: | # this will include new lines to allow paragraphs
-          - Worked on large projects critical to modernizing the company.
-          - Deploying IBM Maximo with a team of 200+ people
-          - Managed 6 different sub teams.  
+          - Coordinated the strategic deployment of IBM Maximo to Azure Cloud with a cross-functional team of over 200 employees, overseeing 6 sub teams, resulting in an operational savings of $1,000,000 per year.
+          - Executed risk management strategies through Jira to reduce and resolve issues and blockers, decreasing budget overruns by $570,000.
+          - Utilized strong interpersonal skills to build relationships with team members and management in a matrix team structure, facilitating smoother communication channels and reducing project delays.
+          - Assigned actionable tasks to owners in every meeting and conducted team wide and project wide retrospectives to drive continious improvement saving 3 weeks during our Bundle 2 release. 
       - layout: left
         border: weak
         title: Foundry Digital
@@ -114,11 +115,11 @@ content:
         quote: >
           Foundry Digital is the leading Bitcoin mining pool in North America, backed by Digital Currency Group.
         description: | # this will include new lines to allow paragraphs
-          - Lead a Competitive and Market analysis for a potential new product line
-          - Lead a team of developers building out an OTC brokerage marketplace
-          - Lead scrum ceremonies and delivered monthly road map presentations
-          - Used productivity tools such as JIRA, GitLab, Confluence, and Miro
-          - Lead a new project initiative focused on mining pool profitability using AWS
+          - Utilized market research data to create a comprehensive go-to-market strategy including key product requirements definitions and pricing recommendations esulting in the successful launch of 10 new features and enhancements.
+          - Established a product roadmap and implementation strategy of new features on the OTC brokerage marketplace, resulting in a 30% increase in user engagement metrics.
+          - Facilitated sprint planning, daily stand-ups, and retrospectives in a rapidly changing blockchain industry with a cross-functional team of 6 members, resulting in a 60% increase in team productivity.
+          - Implemented Confluence as a centralized knowledge hub for cross-functional teams to understand our product strategy, leading to a significant reduction in time spent searching for information.
+          - Utilized data analytics to identify key areas of improvement in product messaging, leading to a 20% increase in customer engagement levels.
       - layout: left
         border: weak
         title: Upstate Interactive
@@ -128,10 +129,9 @@ content:
         quote: >
           Upstate Interactive is a contract software development company that specializes in building Ethereum smart contracts and websites for businesses.
         description: | # this will include new lines to allow paragraphs
-          - Developed Smart Contracts in Solidity, utilizing Hardhat and Node.Js
-          - Knowledgeable on the underlying technology of Bitcoin, Ethereum, and Cardano
-          - Worked with Clients and Senior Devs to build advanced solutions
-          - Used Notion and GitHub Projects to manage project workflow 
+          - Coordinated weekly meetings with clients and developers to prioritize feature development, resulting in a 100% on- time delivery rate of new smart contract features.
+          - Successfully managed and prioritized tasks for 3 software development projects concurrently, using GitHub Projects. Tightening the feedback loop allowed for better decision-making.
+          - Led the redesign of the product interface based on user feedback and A/B testing data, resulting in a 30% increase in user engagement metrics.
       - layout: left
         border: weak
         title: Regal Beloit
@@ -141,10 +141,10 @@ content:
         quote: >
           Regal Beloit Corporation is a leading manufacturer of electric motors serving markets throughout the world.
         description: | # this will include new lines to allow paragraphs
-          - Lead customer driven projects, ensuring scope, timeline and budget were met
-          - Lead New Product Development for four new blower products
-          - Applied critical thinking to find the best solutions to complex multi-department problems
-          - Compiled, evaluated, and presented test data to internal and external stakeholders
+          - Executed detailed project planning to oversee the completion of 10 customer-driven initiatives.
+          - Lead the development of four new blower products earning the company $2,000,000 per year.
+          - Utilized advanced problem-solving techniques to streamline communication and collaboration between departments, resulting in a 15% decrease in production defects.
+          - Utilized statistical modeling techniques and problem-solving skills to analyze the impact of reducing SKU count by 50%, resulting in a projected cost savings of $1.5 million within the first year.
   - title: Certifications
     layout: list
     content:
@@ -156,6 +156,14 @@ content:
         #   Short institution or course description (optional)
         description: | # this will include new lines to allow paragraphs
           The PMP is the gold standard of project management certification. Recognized and demanded by organizations worldwide, the PMP validates your competence to perform in the role of a project manager, leading and directing projects and teams.
+      - layout: left
+        title: Google AI Essentials
+        # sub_title: PMP
+        caption: June 2024
+        # quote: >
+        #   Short institution or course description (optional)
+        description: | # this will include new lines to allow paragraphs
+          Google AI Essentials is a self-paced course designed to help people across roles and industries get essential AI skills to boost their productivity, zero experience required. The course is taught by AI experts at Google who are working to make the technology helpful for everyone.
       - layout: left
         title: Six Sigma Green Belt
         caption: Aug. 2021
