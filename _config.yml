@@ -176,7 +176,7 @@ content:
   - title: Education
     layout: list
     content:
-      - layout: top-center
+      - layout: center
         title: Project Management Professional (PMP)
         description: 
           I earned my PMP certification in under 3 weeks while working full time leveraging my Ultralearning framework and Obsidian. ![PMP knowledge Graph](images/PMP-Knowledge-Graph.png)
