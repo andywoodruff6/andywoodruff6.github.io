@@ -53,7 +53,7 @@ additional_links:
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/profile_pic.jpg
 about_content: | # this will include new lines to allow paragraphs
-  ## Driven towards the bleeding edge by an obsession for efficiency and innovation.
+  # Driven towards the bleeding edge by an obsession for efficiency and innovation.
 
   I have 1 year experience as a product owner and 4 years experience as a project manager. In that time delivered 6 products to market. I am PMP Certified and have a Bachelors in Mechanical Engineering.
 
@@ -65,21 +65,14 @@ content:
     content:
       - layout: left
         border: weak
-        title: Connecti
-        additional_links:
-          - title:  Github page for project
-            icon: fab fa-github
-            url: https://github.com/andywoodruff6/Networking_App
-        # quote: >
-        #   Short overview of the project (optional)
+        title: Open Commercial Media Ecosystem
+        link: https://ocmeco.org/
+        link_text: https://ocmeco.org/
+        quote: >
+          Short overview of the project (optional)
         description: | # this will include new lines to allow paragraphs
-          Connecti is a desktop app that allows users to log social interactions that they have with their friends and colleagues and then provides reminders if too much time has past since the last time you connected. The app is built using Tauri, 
-          Vue and Rust. 
-          ![Connecti Home](images/connecti-home.png)
-          From the home page you can see the next two people you should contact as well as the last thing you discussed with
-          them. In the bottom right you can easily add a new interaction.
-          ![Connecti Calendar](images/connecti-calendar.png)
-          The calendar page allows you to see all of your interactions sorted by the next contact date. Selecting any individual will take you to their profile page where you can see all of your interactions with them.
+          testing info
+
       - layout: left
         border: weak
         title: Trust over IP
@@ -172,7 +165,7 @@ content:
         title: Atala Prism 101, 102, and 103
         caption: Aug. 2022
         description: | # this will include new lines to allow paragraphs
-          Atala PRISM is a decentralized identity solution that allows users to create and manage their digital identities. Atala is secured by the cardano blockchain and allows for identity interactions with smart contracts. 101 provides The foundational principles and concepts of self-sovereign identity (SSI). 102 covers building applications with Atala PRISM. 103 covers a foundation in designing human-centric solutions for decentralized ecosystems. 
+          Atala PRISM is a decentralized identity solution that allows users to create and manage their digital identities. Atala is secured by the Cardano blockchain and allows for identity interactions with smart contracts. 101 provides The foundational principles and concepts of self-sovereign identity (SSI). 102 covers building applications with Atala PRISM. 103 covers a foundation in designing human-centric solutions for decentralized ecosystems. 
   - title: Education
     layout: list
     content:
@@ -182,8 +175,7 @@ content:
           I earned my PMP certification in under 3 weeks while working full time leveraging my Ultralearning framework and Obsidian. ![PMP knowledge Graph](images/PMP-Knowledge-Graph.png)
       - layout: top-right
         title: Any Time, Any Location
-        sub_title: We receive knowledge that we want to remember from many locations at any time of the day. Using Obsidian I have access to all of it when ever and where ever.
-        description: "![Info Processing](images/Info-Processing.png)"
+        description: We receive knowledge that we want to remember from many locations at any time of the day. Using Obsidian I have access to all of it when ever and where ever. ![Info Processing](images/Info-Processing.png)
       - layout: top-left
         title: Ohio Northern University
         sub_title: Bachelors of Science in Mechanical Engineering
