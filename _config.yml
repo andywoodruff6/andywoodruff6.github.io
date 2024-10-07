@@ -176,7 +176,7 @@ content:
   - title: Education
     layout: list
     content:
-      - layout: top-left
+      - layout: top-center
         title: Project Management Professional (PMP)
         description: 
           I earned my PMP certification in under 3 weeks while working full time leveraging my Ultralearning framework and Obsidian. ![PMP knowledge Graph](images/PMP-Knowledge-Graph.png)
@@ -201,9 +201,7 @@ content:
       My journey to the bleeding edge began freshman year of high school when I started a robotics team with my friends. Four years, three design awards, and one non profit business later my trajectory was set. The business is still in operation today and has given thousands of kids a chance to learn about STEM. ![Innovators Robotics](images/innovators-robotics.jpg)
 
       ## My Inspirations and Interests
-      When I'm not building new products or learning about new technology you can find me riding my bike, or hiking. 
-
-      When I get home, tired from my outdoor activities, I enjoy playing board games and video games with my friends and family. My favorite board game is Scythe and my favorite video game series is Borderlands. ![Pikes Peak](images/Pikes-peak.jpg)
+      When I'm not building new products or learning about new technology you can find me riding my bike, or hiking. When I get home, tired from my outdoor activities, I enjoy playing board games and video games with my friends and family. My favorite board game is Scythe and my favorite video game series is Borderlands. ![Pikes Peak](images/Pikes-peak.jpg)
 
 
 # Footer
