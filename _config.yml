@@ -53,8 +53,7 @@ additional_links:
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/profile_pic.jpg
 about_content: | # this will include new lines to allow paragraphs
-  ## A project manager who can code.
-  My technical background and project leadership gives me the ability to understand the customer and the technical team.
+  ## Driven towards the bleeding edge by an obsession for efficiency and innovation.
 
   I have 1 year experience as a product owner and 4 years experience as a project manager. In that time delivered 6 products to market. I am PMP Certified and have a Bachelors in Mechanical Engineering.
 
@@ -177,27 +176,35 @@ content:
   - title: Education
     layout: list
     content:
+      - layout: top-left
+        title: Project Management Professional (PMP)
+        description: 
+          I earned my PMP certification in under 3 weeks while working full time leveraging my Ultralearning framework and Obsidian. ![PMP knowledge Graph](images/PMP-Knowledge-Graph.png)
       - layout: top-right
+        title: Any Time, Any Location
+        description:
+          We receive knowledge that we want to remember from many locations at any time of the day. Using Obsidian I have access to all of it when ever and where ever. ![Info Processing](images/Info-Processing.png)
+      - layout: top-left
         title: Ohio Northern University
         sub_title: Bachelors of Science in Mechanical Engineering
-        caption: 2012 - 2016
         # quote: >
         #   Short institution or course description (optional)
         description: | # this will include new lines to allow paragraphs
           At Ohio Northern I was involved in Human Powered Vehicle and the American Society of Mechanical Engineers. Course work was heavily focused on collaboration, group projects and presentations.
-  - title: A Little More About Me
+  - title: About Me
     layout: text
     content: | # this will include new lines to allow paragraphs
-      ## Interests
-      - Cycling (road and cyclocross)
-      - Board games
-      - Pickleball
-      - Factory Building Games
+      ## Beyond the Product
+      I've always been driven to achieve more with less. From a young age, I co-founded my first company at 16, which still runs today, supporting STEM initiatives in my hometown. This, combined with my degree in Mechanical Engineering set the foundation for being action oriented and a fast paced problem solver. ![My RoadBike](images/My-roadbike.jpg)
 
-      ## Leadership Experience
-      - Co-Chair of the Human Experience Working Group for Trust over IP 
-      - Coach and Board Member of Team Dayton Cycling Club (3 years)
-      - Coach of Fair Valley Swim Team (6 years)
+      ## Innovators Robotics
+      My journey to the bleeding edge began freshman year of high school when I started a robotics team with my friends. Four years, three design awards, and one non profit business later my trajectory was set. The business is still in operation today and has given thousands of kids a chance to learn about STEM. ![Innovators Robotics](images/innovators-robotics.jpg)
+
+      ## My Inspirations and Interests
+      When I'm not building new products or learning about new technology you can find me riding my bike, or hiking. 
+
+      When I get home, tired from my outdoor activities, I enjoy playing board games and video games with my friends and family. My favorite board game is Scythe and my favorite video game series is Borderlands. ![Pikes Peak](images/Pikes-peak.jpg)
+
 
 # Footer
 footer_show_references: false
