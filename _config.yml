@@ -173,7 +173,7 @@ content:
         title: Project Management Professional (PMP)
         description: 
           I earned my PMP certification in under 3 weeks while working full time leveraging my Ultralearning framework and Obsidian. ![PMP knowledge Graph](images/PMP-Knowledge-Graph.png)
-      - layout: top-right
+      - layout: center
         title: Any Time, Any Location
         description: We receive knowledge that we want to remember from many locations at any time of the day. Using Obsidian I have access to all of it when ever and where ever. ![Info Processing](images/Info-Processing.png)
       - layout: top-left
