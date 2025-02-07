@@ -6,4 +6,4 @@
 
 ## Modifying the Theme
 - Update layouts by adding / modifying files in the `layouts` directory.
-
+- Anything smaller than an h3 looks too small.
