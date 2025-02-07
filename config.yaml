@@ -29,3 +29,11 @@ menu:
       name: Archives
       url: /archives/
       weight: 60
+
+params:
+  cover:
+    linkFullImage: true
+  showbreadcrumbs: true
+  defaultTheme: auto
+  ShowShareButtons: true
+  ShowCodeCopyButtons: true
