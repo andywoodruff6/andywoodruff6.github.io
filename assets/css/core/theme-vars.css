@@ -1,4 +1,23 @@
 :root {
+    /* Flexoki Color System */
+    --flexoki-black: #100F0F;
+    --flexoki-paper: #FFFCF0;
+
+    --flexoki-50: #F2F0E5;
+    --flexoki-100: #E6E4D9;
+    --flexoki-150: #DAD8CE;
+    --flexoki-200: #CECDC3;
+    --flexoki-300: #B7B5AC;
+    --flexoki-400: #9F9D96;
+    --flexoki-500: #878580;
+    --flexoki-600: #6F6E69;
+    --flexoki-700: #575653;
+    --flexoki-800: #403E3C;
+    --flexoki-850: #343331;
+    --flexoki-900: #282726;
+    --flexoki-950: #1C1B1A;
+
+    /* Theme Variables */
     --gap: 24px;
     --content-gap: 20px;
     --nav-width: 1024px;
