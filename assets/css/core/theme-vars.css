@@ -52,6 +52,7 @@
     --code-block-bg: var(--flexoki-950);
     --code-bg: var(--flexoki-50);
     --border: var(--flexoki-100);
+    --link: var(--flexoki-purple-600);
 }
 
 .dark {
@@ -64,6 +65,7 @@
     --code-block-bg: var(--flexoki-900);
     --code-bg: var(--flexoki-800);
     --border: var(--flexoki-800);
+    --link: var(--flexoki-purple-600);
 }
 
 .list {
