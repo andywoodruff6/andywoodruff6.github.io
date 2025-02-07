@@ -1,9 +1,9 @@
 {{- if lt hugo.Version "0.125.7" }}
-{{- errorf "=> hugo v0.125.7 or greater is required for hugo-PaperMod to build " }}
+{{- errorf "=> hugo v0.125.7 or greater is required for hugo-PaperMod to build." }}
 {{- end -}}
 
 <!DOCTYPE html>
-<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+<html lang="{{ .Language.Lang }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,14 +12,7 @@
     {{- partial "head.html" . }}
 </head>
 
-<body class="
-{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
-{{- print "list" -}}
-{{- end -}}
-{{- if eq site.Params.defaultTheme `dark` -}}
-{{- print " dark" }}
-{{- end -}}
-" id="top">
+<body class="{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) }}list{{ end }}{{- if eq site.Params.defaultTheme `dark` }} dark{{- end }}" id="top">
     {{- partialCached "header.html" . .Page -}}
     <main class="main">
         {{- block "main" . }}{{ end }}
