@@ -1,6 +1,6 @@
 ---
 date: '2025-02-10T20:09:51-06:00'
-draft: true
+draft: false
 title: 'Open Commercial Media Ecosystem'
 tags: []
 ---
