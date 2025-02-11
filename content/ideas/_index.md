@@ -1,7 +1,5 @@
 ---
 title: "Ideas"
-description: "My Ideas"
+description: "Capturing my thoughts"
 layout: list
 ---
-
-Welcome to my ideas page. Here you'll find various thoughts and concepts I'm exploring.
