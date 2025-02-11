@@ -1,0 +1,39 @@
+baseURL: "https://andywoodruff6.github.io/"
+languageCode: en-us
+title: Andy Woodruff
+theme: PaperMod
+
+menu:
+  main:
+    - identifier: Projects
+      name: Projects
+      url: /projects/
+      weight: 10
+    - identifier: Predictions
+      name: Predictions
+      url: /predictions/
+      weight: 20
+    - identifier: Ideas
+      name: Ideas
+      url: /ideas/
+      weight: 30
+    - identifier: Curation
+      name: Curation
+      url: /curation/
+      weight: 40
+    - identifier: About
+      name: About
+      url: /about/
+      weight: 50
+    - identifier: Archives
+      name: Archives
+      url: /archives/
+      weight: 60
+
+params:
+  cover:
+    linkFullImage: true
+  showbreadcrumbs: true
+  defaultTheme: auto
+  ShowShareButtons: true
+  ShowCodeCopyButtons: true
