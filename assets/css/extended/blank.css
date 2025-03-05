@@ -6,7 +6,7 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 
 /* Increase padding under the main heading */
 .main h1 {
-    margin-bottom: 30px; /* Increase this value for more padding */
+    margin-bottom: 70px; /* Increase this value for more padding */
 }
 
 /* If the above doesn't target the right element, try this alternative */
