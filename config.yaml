@@ -37,3 +37,10 @@ params:
   defaultTheme: auto
   ShowShareButtons: true
   ShowCodeCopyButtons: true
+  
+  # Specify which sections should appear on the home page
+  # This excludes the "ideas" section
+  mainSections:
+    - "predictions"
+    - "projects"
+    - "curation"
