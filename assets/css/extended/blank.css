@@ -3,3 +3,18 @@ This is just a placeholder blank stylesheet so as to support adding custom style
 
 Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
 */
+
+/* Increase padding under the main heading */
+.main h1 {
+    margin-bottom: 30px; /* Increase this value for more padding */
+}
+
+/* If the above doesn't target the right element, try this alternative */
+.post-title {
+    margin-bottom: 30px; /* Increase this value for more padding */
+}
+
+/* For archive pages and other list pages */
+.archive-title, .page-title, .term-title {
+    margin-bottom: 30px; /* Increase this value for more padding */
+}
