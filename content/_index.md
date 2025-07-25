@@ -2,7 +2,10 @@
 
 I am an experienced Product Owner and Project Manager who has delivered 6 products to market and managed several multi million dollar projects. I am PMP Certified and have a Bachelors in Mechanical Engineering.
 
-I believe that there has been an erosion of individual privacy and data sovereignty in our lives, and I'm building systems that return control to people's lives. Through this digital empowerment  I will bring self sovereign identity to 100 million people by the end of 2034.
+## Mission
+
+- M1: I'm developing decentralized systems that restore economic agency to creators and professionals by providing cryptographically secure alternatives to traditional gatekeeper-controlled industries.
+- M2: I'm building awareness of the transition to a new world view by creating accessible tools that help people thrive rather than just survive this transformation.
 
 ## Projects
 Projects outside of the 9 to 5 is one of the best ways to grow. Currently I have several leadership positions, including roles at The [Open Commercial Media Ecosystem](https://ocmeco.org) and The [Trust over IP Foundation](https://trustoverip.org/). Go to the Projects page for more details.
