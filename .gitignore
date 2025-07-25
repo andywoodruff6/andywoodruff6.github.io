@@ -1,7 +1,5 @@
 # Development Files
 .env
-*.aider
-.aider*
 
 # Hugo
 /public/
