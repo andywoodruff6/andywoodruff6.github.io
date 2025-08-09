@@ -5,6 +5,8 @@ title = 'Transition to a New World View'
 tags = ['predictions']
 +++
 
+![The Transition](/images/the_transition.png)
+
 > *The Ultimate goal is not to do research but to make actionable predictions.*
 
 ## Detailed Prediction
