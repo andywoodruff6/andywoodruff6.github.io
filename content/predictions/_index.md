@@ -10,4 +10,5 @@ I started this page after reading [Superforecasting](/ideas/superforecasting_by_
 
 | Prediction | Confidence | Status | Prediction Date | Target Date |
 | --- | --- | --- | --- | --- |
-| [Generative AI will make it nearly impossible to tell who is a real person on the internet.](/predictions/prediction-001) | ⬆️⬆️ Almost Certain | 🟡 In Progress | 02/17/2025 | 07/31/2025 |
+| [Generative AI will make it nearly impossible to tell who is a real person on the internet.](/predictions/prediction-001) | ✅ Certain | ✅ Complete | 02/17/2025 | 07/31/2025 |
+| [Transition to a New World View](/predictions/transition-to-new-world-view) | ⬆️ Probable | 🟡 In Progress | 08/09/2025 | 01/01/2050 |
