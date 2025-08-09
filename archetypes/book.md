@@ -6,4 +6,10 @@ description:
 tags: [books]
 ---
 
-> [!tip] Read or use AI analysis.
+## Overview
+
+
+## World View Adjustment
+
+
+## Book Notes
