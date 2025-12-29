@@ -18,3 +18,9 @@ Ideas shape who we are, and not enough of us are in touch with our true thoughts
 
 ## Curation
 In the age of generative AI **slop**, curation will be hands down the most important skill for understanding what is going on in the world around you. In seconds anyone will be able to generate a fake news article, a fake image, or even a fake video. Finding real people with real values sharing real information will be key to navigating this new world.
+
+{{< rawhtml >}}
+<div style="margin-top: 3rem; text-align: center;">
+  <iframe src="https://shiftingcurrent.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+</div>
+{{< /rawhtml >}}
