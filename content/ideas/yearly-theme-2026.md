@@ -7,20 +7,35 @@ tags: ['yearly-theme', 'personal']
 
 ![Scale Your Compute 2026](/images/scale-your-compute-2026-final.png)
 
-## The Theme
+Yearly **resolutions** are designed for you to **fail**. 
 
-**Scale Your Compute** — The continuation of high-agency intensity, channeled through systems that multiply output.
+Yearly **[THEMES](https://www.themesystem.com/)** are designed for you to **succeed**. 
 
-### Theme Progression
-- **2024: Manufacture Opportunities** — Position yourself for good things to happen
-- **2025: High Agency** — Less planning, more doing
-- **2026: Scale Your Compute** — Multiply the results of each action through AI, automation, and software systems
+>"When trying to build yourself into a better version of you, exact data points don't matter. All that matters is the trend line." - CGP Grey
 
-### Why This Theme
-The gnawing drive to get things done stays. The 60-hour weeks of direct labor don't.
+I've been implementing themes instead of resolutions for over three years now. Themes are that constant reminder about the direction that you want to grow, rather than rigid criteria. 2024 was "Manufacture Opportunities." 2025 was "High Agency." For 2026, the theme is **Scale Your Compute**.
 
-2025 proved that intensity works (OCME milestones, 501(c)(6), 5.1M views). But Q4 also proved that raw hours don't scale and come at a health cost. The AI daemon goal succeeded because I built something that runs. The 2026 question: **what else can you build that runs without you?**
+> "Scale your compute to scale your impact." - [IndyDevDan](https://indydevdan.com/)
+## What It Means
 
-"Compute" is literal: AI systems, software tools, automation that execute work. Whether prompting AI tools or writing code, the mechanism is computational leverage. Each unit of effort should yield more than one unit of result.
+"Compute" is literal: AI systems, software tools, automations that execute work. The idea is simple: **each unit of effort should yield more than one unit of result**.
 
-This theme gives permission to spend time building infrastructure rather than doing direct work; which can feel unproductive in the moment but compounds toward 2034.
+Whether it's prompting Claude to build a custom workflow, automating a repetitive task, or writing code that runs while I sleep, I'm scaling compute. It's turning 1 hour of setup into 100 hours of recurring value.
+
+## Why Now
+
+For me, 2025 proved that intensity works. Raw effort, high agency, bias toward action delivers results. It also proved that direct labor doesn't scale. Sixty-hour weeks produce output, but those hours have a cost. They don't compound.
+
+The question for 2026: **What can I build that runs without me manually doing it?**
+
+AI has made this possible for everyone, not just software engineers. You don't need a CS degree to build tools that multiply your output. You need prompts, systems thinking, and willingness to invest an hour building something that saves you ten.
+
+In this new world, computational leverage is no longer optional. We're living through a fundamental shift: The Age of Intelligence, The Age of AI. The old model locked simple automations behind years of expertise. Today all you need is $20 and an ability to describe what you want the software to do.
+
+## Why Share?
+
+Yearly themes work because they're directional, not binary. You can't fail a theme; you can only orient toward it or away from it.
+
+2026 is the year to build systems that scale your compute.
+
+---
