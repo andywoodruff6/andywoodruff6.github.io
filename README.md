@@ -8,3 +8,6 @@
 ## Modifying the Theme
 - Update layouts by adding / modifying files in the `layouts` directory.
 - Anything smaller than an h3 looks too small.
+
+## Content Guidelines
+- See [TAGS.md](TAGS.md) for tagging rules and approved tags (max 5 per file)

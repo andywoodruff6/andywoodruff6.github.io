@@ -3,7 +3,7 @@ date: '2025-03-21T12:51:43-05:00'
 draft: false
 title: 'Never Split The Difference by Voss'
 description: 
-tags: [books]
+tags: [books, business]
 ---
 
 ## Read or use AI analysis.

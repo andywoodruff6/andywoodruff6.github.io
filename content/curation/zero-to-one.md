@@ -3,7 +3,7 @@ date: '2025-08-03T09:44:20-05:00'
 draft: true
 title: 'Zero to One'
 description: This is the single sentence summary for zero to one
-tags: [books, Peter Thiel]
+tags: [books, business]
 ---
 
 ## Overview

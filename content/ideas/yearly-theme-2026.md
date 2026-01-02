@@ -2,7 +2,7 @@
 date: '2025-12-29T16:47:23-06:00'
 draft: false
 title: 'Yearly Theme 2026'
-tags: ['yearly-theme', 'personal']
+tags: [yearly-theme, personal, AI]
 ---
 
 ![Scale Your Compute 2026](/images/scale-your-compute-2026-final.png)

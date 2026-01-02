@@ -2,7 +2,7 @@
 date: '2025-07-25T11:04:07-05:00'
 draft: false
 title: 'The Shifting Current'
-tags: ["projects"]
+tags: [projects, predictions]
 ---
 
 The Shifting Current is a Substack blog that serves as the primary output of my second mission (M2): building awareness of the transition to a new world view by creating accessible tools that help people thrive rather than just survive this transformation.

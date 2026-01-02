@@ -44,3 +44,4 @@ This is Andy Woodruff's personal website built with Hugo static site generator u
 - Images should be placed in `static/images/` and referenced as `/images/filename.jpg`
 - The site uses PaperMod theme features like cover images, breadcrumbs, and share buttons
 - Headings smaller than h3 appear too small per the README guidance
+- **Tagging**: Follow the rules in [TAGS.md](TAGS.md) - max 5 tags, use approved tags only
