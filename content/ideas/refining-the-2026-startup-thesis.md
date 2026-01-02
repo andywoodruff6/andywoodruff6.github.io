@@ -3,7 +3,7 @@ date: '2026-01-02T11:14:57-06:00'
 draft: false
 title: 'Refining the 2026 Startup Thesis'
 description: "Greg's '20 Mega Shifts' thread captures something real. Here are my thoughts."
-tags: ['shifting-current', 'startups', 'greg-isenberg']
+tags: [AI, business]
 ---
 
 ![Refining the 2026 Startup Thesis](/images/blog-refining-2026-startup-thesis-header-20260102.jpg)
