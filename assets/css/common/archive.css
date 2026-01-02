@@ -1,44 +1,193 @@
-.archive-posts {
+/* ==========================================================================
+   Archives Page - Search, Filters, and Results
+   ========================================================================== */
+
+/* Search Box */
+.archive-search-box {
+    margin: 20px 0;
+}
+
+#archive-search {
     width: 100%;
+    padding: 12px 16px;
     font-size: 16px;
+    color: var(--primary);
+    background: var(--theme);
+    border: 2px solid var(--tertiary);
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.2s ease;
 }
 
-.archive-year {
-    margin-top: 40px;
+#archive-search:focus {
+    border-color: var(--secondary);
 }
 
-.archive-year:not(:last-of-type) {
-    border-bottom: 2px solid var(--border);
+#archive-search::placeholder {
+    color: var(--secondary);
+    opacity: 0.7;
 }
 
-.archive-month {
+/* Tag Filters */
+.archive-tag-filters {
+    margin: 20px 0;
+    padding: 15px;
+    background: var(--code-bg);
+    border-radius: var(--radius);
+}
+
+.archive-tag-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.archive-tags {
     display: flex;
-    align-items: flex-start;
-    padding: 10px 0;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.archive-month-header {
-    margin: 25px 0;
-    width: 200px;
+.archive-tag-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary);
+    background: var(--tertiary);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s ease;
 }
 
-.archive-month:not(:last-of-type) {
+.archive-tag-btn:hover {
+    background: var(--border);
+}
+
+.archive-tag-btn.active {
+    background: var(--primary);
+    color: var(--theme);
+    border-color: var(--primary);
+}
+
+.archive-tag-count {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.archive-tag-btn.active .archive-tag-count {
+    opacity: 0.9;
+}
+
+/* Meta Bar */
+.archive-meta-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
 }
 
+#archive-count {
+    font-size: 14px;
+    color: var(--secondary);
+}
+
+.archive-clear-btn {
+    padding: 4px 10px;
+    font-size: 13px;
+    color: var(--secondary);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.archive-clear-btn:hover {
+    color: var(--primary);
+    border-color: var(--secondary);
+}
+
+/* Results */
+.archive-results {
+    margin-top: 20px;
+}
+
 .archive-entry {
-    position: relative;
-    padding: 5px;
-    margin: 10px 0;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.archive-entry:last-child {
+    border-bottom: none;
+}
+
+.archive-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .archive-entry-title {
-    margin: 5px 0;
-    font-weight: 400;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
 }
 
-.archive-count,
-.archive-meta {
+.archive-entry-title a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.archive-entry-title a:hover {
     color: var(--secondary);
+}
+
+.archive-entry-date {
     font-size: 14px;
+    color: var(--secondary);
+    white-space: nowrap;
+}
+
+.archive-entry-tags {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.archive-entry-tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    background: var(--tertiary);
+    border-radius: 4px;
+    color: var(--secondary);
+}
+
+.archive-no-results {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--secondary);
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .archive-entry-header {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .archive-entry-date {
+        order: -1;
+        font-size: 13px;
+    }
 }

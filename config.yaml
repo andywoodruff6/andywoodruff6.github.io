@@ -3,6 +3,12 @@ languageCode: en-us
 title: Andy Woodruff
 theme: PaperMod
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 menu:
   main:
     - identifier: Projects
