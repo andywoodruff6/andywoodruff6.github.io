@@ -1,9 +1,9 @@
-+++
-date = '2025-08-09'
-draft = false
-title = 'Transition to a New World View'
-tags = ['predictions']
-+++
+---
+date: '2025-08-09'
+draft: false
+title: 'Transition to a New World View'
+tags: [predictions]
+---
 
 ![The Transition](/images/the_transition.png)
 

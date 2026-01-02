@@ -40,6 +40,7 @@ This is Andy Woodruff's personal website built with Hugo static site generator u
 
 ## Content Creation Notes
 
+- **Front matter**: Use YAML format (`---`) not TOML (`+++`) for all content files
 - All content sections use front matter for metadata
 - Images should be placed in `static/images/` and referenced as `/images/filename.jpg`
 - The site uses PaperMod theme features like cover images, breadcrumbs, and share buttons

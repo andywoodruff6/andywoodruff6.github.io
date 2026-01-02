@@ -1,9 +1,9 @@
-+++
-date = '2025-02-17T16:29:25-06:00'
-draft = false
-title = 'Generative AI Social Media Acounts'
-tags = ['predictions']
-+++
+---
+date: '2025-02-17T16:29:25-06:00'
+draft: false
+title: 'Generative AI Social Media Acounts'
+tags: [predictions, AI]
+---
 
 > *The Ultimate goal is not to do research but to make actionable predictions.*
 

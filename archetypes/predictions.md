@@ -1,9 +1,9 @@
-+++
-date = '{{ .Date }}'
-draft = true
-title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-tags = ['predictions']
-+++
+---
+date: '{{ .Date }}'
+draft: true
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+tags: [predictions]
+---
 
 > *The Ultimate goal is not to do research but to make actionable predictions.*
 

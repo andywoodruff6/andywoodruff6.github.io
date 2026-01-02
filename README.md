@@ -10,4 +10,5 @@
 - Anything smaller than an h3 looks too small.
 
 ## Content Guidelines
+- Use YAML front matter (`---`) not TOML (`+++`) for all content files
 - See [TAGS.md](TAGS.md) for tagging rules and approved tags (max 5 per file)
