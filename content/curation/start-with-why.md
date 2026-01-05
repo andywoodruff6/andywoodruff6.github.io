@@ -1,7 +1,7 @@
 ---
 date: '2025-08-03T08:45:37-05:00'
-draft: true
-title: 'Start With Why'
+draft: false
+title: 'Start with Why by Simon Sinek'
 description: The greatest companies and individuals started with why they exist rather than what they do. 
 tags: [books, business]
 ---
