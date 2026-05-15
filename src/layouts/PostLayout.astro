@@ -1,0 +1,41 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  date?: Date;
+  tags?: string[];
+  cover?: string;
+  section?: string;
+}
+
+const { title, description, date, tags = [], cover, section } = Astro.props;
+
+const formattedDate = date
+  ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
+---
+
+<Base title={title} description={description} ogImage={cover}>
+  <article>
+    {section && (
+      <p class="post-meta">
+        <a href={`/${section}/`} style="text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem;">
+          {section}
+        </a>
+      </p>
+    )}
+    <h1>{title}</h1>
+    <p class="post-meta">
+      {formattedDate && <span>{formattedDate}</span>}
+      {tags.length > 0 && (
+        <span style="margin-left: 0.5rem;">
+          {tags.map((t) => <span class="tag">{t}</span>)}
+        </span>
+      )}
+    </p>
+    {cover && <img src={cover} alt={title} />}
+    <slot />
+  </article>
+</Base>

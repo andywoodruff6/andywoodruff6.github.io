@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const collections = ['projects', 'predictions', 'ideas', 'curation'] as const;
+
+const allEntries = (
+  await Promise.all(
+    collections.map(async (c) => {
+      const entries = await getCollection(c, ({ data }) => !data.draft);
+      return entries.map((e) => ({ ...e, section: c }));
+    })
+  )
+).flat();
+
+allEntries.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+
+const grouped = new Map<string, typeof allEntries>();
+for (const entry of allEntries) {
+  const year = entry.data.date ? String(entry.data.date.getFullYear()) : 'Undated';
+  if (!grouped.has(year)) grouped.set(year, []);
+  grouped.get(year)!.push(entry);
+}
+const years = [...grouped.keys()].sort((a, b) => (a === 'Undated' ? 1 : b === 'Undated' ? -1 : Number(b) - Number(a)));
+
+function fmt(d?: Date) {
+  return d ? d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+}
+---
+
+<Base title="Archives" description="All posts, by year.">
+  <h1>Archives</h1>
+  <p>Everything published, newest first.</p>
+
+  {years.map((year) => (
+    <section class="home-section">
+      <h2>{year}</h2>
+      <ul class="post-list">
+        {grouped.get(year)!.map((e) => (
+          <li>
+            <a class="post-list-title" href={`/${e.section}/${e.id}/`}>{e.data.title}</a>
+            <span class="post-list-meta">{fmt(e.data.date)} · {e.section}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>

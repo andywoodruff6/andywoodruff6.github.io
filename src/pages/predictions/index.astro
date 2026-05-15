@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('predictions', ({ data }) => !data.draft);
+entries.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+
+function fmt(d?: Date) {
+  return d ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+}
+---
+
+<Base title="Predictions" description="Time-bound, falsifiable predictions.">
+  <h1>Predictions</h1>
+  <p>
+    Predictions are how you put yourself in a position to get lucky.
+    The point isn't research — it's putting a stake in the ground that you can be measured against.
+    Inspired by <a href="/curation/superforecasting-by-philip-tetlock/">Superforecasting</a>.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Prediction</th>
+        <th>Confidence</th>
+        <th>Status</th>
+        <th>Made</th>
+        <th>Target</th>
+      </tr>
+    </thead>
+    <tbody>
+      {entries.map((p) => (
+        <tr>
+          <td><a href={`/predictions/${p.id}/`}>{p.data.title}</a></td>
+          <td>{p.data.confidence ?? '—'}</td>
+          <td>{p.data.status ?? '—'}</td>
+          <td>{fmt(p.data.date)}</td>
+          <td>{fmt(p.data.target)}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</Base>

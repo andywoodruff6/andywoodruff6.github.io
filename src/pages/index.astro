@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const sectionsToShow = ['ideas', 'predictions', 'curation'] as const;
+
+async function recentFor(section: typeof sectionsToShow[number], n: number) {
+  const all = await getCollection(section, ({ data }) => !data.draft);
+  return all
+    .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0))
+    .slice(0, n);
+}
+
+const [ideas, predictions, curation] = await Promise.all([
+  recentFor('ideas', 4),
+  recentFor('predictions', 4),
+  recentFor('curation', 4),
+]);
+
+function fmt(d?: Date) {
+  return d ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+}
+---
+
+<Base title="Andy Woodruff" description="Executive Director of OCME. Bringing self-sovereign identity to 100 million people by 2034.">
+  <section class="home-intro">
+    <h1>Andy Woodruff</h1>
+    <p class="lede">
+      Executive Director of the <a href="https://ocmeco.org">Open Commercial Media Ecosystem</a>.
+      Building creator-governed alternatives to gatekeeper platforms.
+      Bringing self-sovereign identity to 100 million people by 2034.
+    </p>
+    <p>
+      I write at <a href="https://shiftingcurrent.substack.com">The Shifting Current</a> about
+      the transition we're living through — AI, decentralized identity, and what it takes to
+      thrive (not just survive) the next decade.
+    </p>
+  </section>
+
+  <section class="home-section">
+    <h2>Ideas</h2>
+    <ul class="post-list">
+      {ideas.map((p) => (
+        <li>
+          <a class="post-list-title" href={`/ideas/${p.id}/`}>{p.data.title}</a>
+          <span class="post-list-meta">{fmt(p.data.date)}</span>
+          {p.data.description && <p class="post-list-desc">{p.data.description}</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="home-section">
+    <h2>Predictions</h2>
+    <ul class="post-list">
+      {predictions.map((p) => (
+        <li>
+          <a class="post-list-title" href={`/predictions/${p.id}/`}>{p.data.title}</a>
+          <span class="post-list-meta">{fmt(p.data.date)}</span>
+          {p.data.description && <p class="post-list-desc">{p.data.description}</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="home-section">
+    <h2>Curation</h2>
+    <ul class="post-list">
+      {curation.map((p) => (
+        <li>
+          <a class="post-list-title" href={`/curation/${p.id}/`}>{p.data.title}</a>
+          <span class="post-list-meta">{fmt(p.data.date)}</span>
+          {p.data.description && <p class="post-list-desc">{p.data.description}</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

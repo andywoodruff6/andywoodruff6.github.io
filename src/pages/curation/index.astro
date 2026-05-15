@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('curation', ({ data }) => !data.draft);
+entries.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+
+function fmt(d?: Date) {
+  return d ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+}
+---
+
+<Base title="Curation" description="In an age of generative slop, curation is the most important skill.">
+  <h1>Curation</h1>
+  <p>
+    Way too much noise. I want to help you find the signal — book notes, frameworks,
+    and the few sources actually worth your time.
+  </p>
+
+  <ul class="post-list">
+    {entries.map((p) => (
+      <li>
+        <a class="post-list-title" href={`/curation/${p.id}/`}>{p.data.title}</a>
+        <span class="post-list-meta">{fmt(p.data.date)}</span>
+        {p.data.description && <p class="post-list-desc">{p.data.description}</p>}
+      </li>
+    ))}
+  </ul>
+</Base>

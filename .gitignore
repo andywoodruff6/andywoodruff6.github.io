@@ -1,19 +1,26 @@
-# Development Files
+# Astro
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Environment variables
 .env
+.env.production
+.env.local
 
-# Hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
-.hugo_build.lock
-
-# OS Files
+# OS
 .DS_Store
 Thumbs.db
 
-# IDE/Editor Files
-.idea/
+# IDE
 .vscode/
+.idea/
 *.swp
 *.swo
+
+# Legacy Hugo strays
+/resources/_gen/
+hugo_stats.json
+.hugo_build.lock
