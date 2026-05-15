@@ -8,8 +8,9 @@ interface Props {
 }
 
 const { title, description, ogImage } = Astro.props;
-const siteTitle = 'The Shifting Current';
-const author = 'Andy Woodruff';
+const siteTitle = 'Andy Woodruff';
+const newsletterName = 'The Shifting Current';
+const author = siteTitle;
 const fullTitle = title === siteTitle ? title : `${title} — ${siteTitle}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : undefined;
@@ -42,8 +43,8 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
     <header class="site-header">
       <nav class="site-nav">
         <a href="/" class="brand">
-          The Shifting Current
-          <span class="brand-by">by {author}</span>
+          Andy Woodruff
+          <span class="brand-by">Executive Director, OCME</span>
         </a>
         <ul>
           <li><a href="/2034/">2034</a></li>
@@ -61,8 +62,9 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
     </main>
     <footer class="site-footer">
       <p>
-        <strong>The Shifting Current</strong> · Written by {author} ·
-        <a href="https://shiftingcurrent.substack.com">Subscribe to the newsletter</a>
+        <strong>{author}</strong> ·
+        <a href="https://shiftingcurrent.substack.com">{newsletterName}</a> (newsletter) ·
+        <a href="/rss.xml">RSS</a>
       </p>
       <p style="margin-top: 0.5rem; font-size: 0.78rem; opacity: 0.7;">
         © {new Date().getFullYear()} {author}

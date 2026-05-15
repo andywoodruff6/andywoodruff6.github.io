@@ -3,7 +3,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://theshiftingcurrent.com',
+  site: 'https://andywoodruff.net',
   integrations: [mdx(), sitemap()],
   markdown: {
     shikiConfig: {
