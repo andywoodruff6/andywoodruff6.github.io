@@ -74,8 +74,9 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
           <li><a href="/predictions/">Predictions</a></li>
           <li><a href="/ideas/">Ideas</a></li>
           <li><a href="/curation/">Curation</a></li>
+          <li><a href="/speaking/">Speaking</a></li>
+          <li><a href="/connect/">Connect</a></li>
           <li><a href="/about/">About</a></li>
-          <li><a href="/archives/">Archives</a></li>
         </ul>
         <ThemeToggle />
       </nav>
@@ -84,14 +85,19 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
       <slot />
     </main>
     <footer class="site-footer">
-      <p>
-        <strong>{author}</strong> ·
-        <a href="https://shiftingcurrent.substack.com">{newsletterName}</a> (newsletter) ·
-        <a href="/rss.xml">RSS</a>
-      </p>
-      <p style="margin-top: 0.5rem; font-size: 0.78rem; opacity: 0.7;">
-        © {new Date().getFullYear()} {author}
-      </p>
+      <div class="footer-inner">
+        <p class="footer-line">
+          <strong>{author}</strong>
+          <a class="footer-subscribe" href="https://shiftingcurrent.substack.com" rel="noopener">
+            Subscribe — {newsletterName} →
+          </a>
+          <a href="/archives/">Archives</a>
+          <a href="/rss.xml">RSS</a>
+        </p>
+        <p class="footer-copyright">
+          © {new Date().getFullYear()} {author}
+        </p>
+      </div>
     </footer>
   </body>
 </html>

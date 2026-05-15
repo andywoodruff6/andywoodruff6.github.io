@@ -1,9 +1,12 @@
 ---
 const lastUpdated = '2026-05-15';
 const items = [
-  { label: 'shipping', value: 'OCME governance v2, Showrunner module' },
-  { label: 'reading', value: 'Superforecasting (Tetlock)' },
-  { label: 'building', value: 'Ekko + PAI integration, Remotion video pipeline' },
+  {
+    label: 'shipping',
+    value: 'OCME governance framework V1, <a href="https://cubicube.com/" rel="noopener">CubiCubes</a>',
+  },
+  { label: 'reading', value: 'Loonshots (Bahcall)' },
+  { label: 'building', value: 'EKKO (my PAI), Custom MCP Servers' },
 ];
 ---
 <aside class="currently" aria-label="Currently">
@@ -15,7 +18,7 @@ const items = [
     {items.map((item) => (
       <li>
         <span class="currently-label">{item.label}</span>
-        <span class="currently-value">{item.value}</span>
+        <span class="currently-value" set:html={item.value} />
       </li>
     ))}
   </ul>

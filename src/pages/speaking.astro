@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+
+type Engagement = {
+  date: string;
+  event: string;
+  location: string;
+  format: string;
+  topic: string;
+  link?: string;
+};
+
+const engagements: Engagement[] = [
+  {
+    date: '2026-04-09 → 04-13',
+    event: 'Soulscape',
+    location: 'San Francisco, CA',
+    format: 'Keynote + Panel',
+    topic: 'Self-sovereign identity as the substrate for creator economies',
+    link: 'https://open.substack.com/pub/shiftingcurrent/p/will-ai-kill-film-and-tv',
+  },
+  {
+    date: '2026-04 — ongoing',
+    event: 'OCME Community All Members Assembly #1',
+    location: 'Virtual',
+    format: 'AMA',
+    topic: 'OCME roadmap, the 100M DIDs mission, ED Q&A',
+    link: 'https://theocme.substack.com/p/ocme-all-members-assembly',
+  },
+];
+
+const topics = [
+  'Self-sovereign identity and the trust layer of the next internet',
+  'Creator-governed ecosystems vs. platform extraction',
+  'AI + identity: provenance, agency, and the Human 3.0 transition',
+  'Running an ED role: shipping ecosystems, not just code',
+  'The 100M DIDs target — why this is the tipping point',
+];
+
+const interestedIn = [
+  'Keynotes on identity, AI, and the creator economy',
+  'Panels with creator-economy founders and protocol leads',
+  'Closed-door working sessions with platform partnerships teams',
+  'Podcast and long-form interview formats',
+];
+---
+
+<Base
+  title="Speaking"
+  description="Talks, panels, and partnership conversations — identity, AI, and creator economies."
+>
+  <section class="page-intro">
+    <p class="kicker">SPEAKING</p>
+    <h1>Speaking</h1>
+    <p class="lede">
+      I speak about self-sovereign identity, AI, and creator-governed ecosystems — and the
+      transition layer between them. The 100M DIDs mission frames most of what I say in public.
+    </p>
+  </section>
+
+  <section class="home-section">
+    <h2 class="section-label"><span class="section-number">01</span> Recent &amp; Upcoming</h2>
+    <ul class="post-list">
+      {engagements.map((e) => (
+        <li>
+          {e.link ? (
+            <a class="post-list-title" href={e.link} rel="noopener">{e.event}</a>
+          ) : (
+            <span class="post-list-title post-list-title--static">{e.event}</span>
+          )}
+          <span class="post-list-meta">{e.date} · {e.location} · {e.format}</span>
+          <p class="post-list-desc">{e.topic}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="home-section">
+    <h2 class="section-label"><span class="section-number">02</span> Topics</h2>
+    <ul class="static-list">
+      {topics.map((t) => <li>{t}</li>)}
+    </ul>
+  </section>
+
+  <section class="home-section">
+    <h2 class="section-label"><span class="section-number">03</span> Formats I'm Interested In</h2>
+    <ul class="static-list">
+      {interestedIn.map((t) => <li>{t}</li>)}
+    </ul>
+  </section>
+
+  <section class="page-cta">
+    <p>
+      Booking inquiries:
+      <a href="/connect/#speaking">Connect → Press / Speaking</a>
+      or email
+      <a href="mailto:andy@ocmeco.org?subject=Speaking%20inquiry">andy@ocmeco.org</a>.
+    </p>
+  </section>
+</Base>

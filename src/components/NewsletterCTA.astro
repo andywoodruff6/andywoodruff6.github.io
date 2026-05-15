@@ -1,0 +1,25 @@
+---
+interface Props {
+  variant?: 'inline' | 'compact';
+  headline?: string;
+}
+
+const {
+  variant = 'inline',
+  headline = 'Subscribe to The Shifting Current',
+} = Astro.props;
+
+const sub = 'Weekly notes on identity, AI, and the creator economy. One email a week. No spam.';
+const url = 'https://shiftingcurrent.substack.com';
+---
+
+<aside class={`newsletter-cta newsletter-cta--${variant}`} aria-label="Newsletter signup">
+  <div class="newsletter-cta-body">
+    <p class="newsletter-cta-kicker">NEWSLETTER</p>
+    <p class="newsletter-cta-headline">{headline}</p>
+    {variant === 'inline' && <p class="newsletter-cta-sub">{sub}</p>}
+  </div>
+  <div class="newsletter-cta-actions">
+    <a class="btn-cta" href={url} rel="noopener">Subscribe →</a>
+  </div>
+</aside>

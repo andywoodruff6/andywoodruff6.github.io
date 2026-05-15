@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+
+const buckets = [
+  {
+    id: 'partnership',
+    label: 'Partnership',
+    role: 'OCME — Executive Director',
+    desc: 'Distribution, integration, or ecosystem partnerships with OCME. Creator-side, platform-side, or protocol-side.',
+    fit: [
+      'You run a creator platform, agency, or guild and want to issue / accept verifiable credentials.',
+      'You\'re building on a chain or identity protocol and want OCME alignment.',
+      'You represent a brand or sponsor and want a creator-economy partner with governance.',
+    ],
+    mailto: 'andy@ocmeco.org?subject=OCME%20Partnership',
+  },
+  {
+    id: 'consulting',
+    label: 'Consulting',
+    role: 'Shifting Current Consulting',
+    desc: 'Selective engagements: identity strategy, AI-native content systems, AEO/discovery, founder-mode operating systems.',
+    fit: [
+      'You need a senior operator to architect identity / AI / creator-economy strategy.',
+      'You want an AEO (answer-engine-optimization) audit and rebuild.',
+      'You want a founder-mode operating system (TELOS, weekly logs, agentic tooling).',
+    ],
+    mailto: 'andy@ocmeco.org?subject=Consulting%20inquiry',
+  },
+  {
+    id: 'speaking',
+    label: 'Press / Speaking',
+    role: 'Talks, interviews, podcasts',
+    desc: 'Press, podcasts, keynotes, panels — see /speaking/ for topics and recent engagements.',
+    fit: [
+      'You\'re booking a stage, podcast, or panel on identity / AI / creator economy.',
+      'You\'re a journalist on a story about SSI, OCME, or creator governance.',
+      'You want a quote or contributed piece for an outlet or report.',
+    ],
+    mailto: 'andy@ocmeco.org?subject=Press%20%2F%20Speaking%20inquiry',
+  },
+];
+---
+
+<Base
+  title="Connect"
+  description="Three paths to reach me — Partnership (OCME), Consulting (Shifting Current), and Press / Speaking."
+>
+  <section class="page-intro">
+    <p class="kicker">CONNECT</p>
+    <h1>Connect</h1>
+    <p class="lede">
+      Three ways to reach me. Pick the bucket that fits — it routes faster than a generic message.
+    </p>
+  </section>
+
+  {buckets.map((b) => (
+    <section class="home-section" id={b.id}>
+      <h2 class="section-label">
+        <span class="section-number">{String(buckets.indexOf(b) + 1).padStart(2, '0')}</span> {b.label}
+      </h2>
+      <p class="post-list-meta" style="margin-bottom: 0.5rem;">{b.role}</p>
+      <p>{b.desc}</p>
+      <p style="margin-top: 0.75rem; font-weight: 500;">Good fit if:</p>
+      <ul class="static-list">
+        {b.fit.map((f) => <li>{f}</li>)}
+      </ul>
+      <p style="margin-top: 1rem;">
+        <a class="btn-cta" href={`mailto:${b.mailto}`}>Email about {b.label.toLowerCase()} →</a>
+      </p>
+    </section>
+  ))}
+
+  <section class="page-cta">
+    <p>
+      For everything else:
+      <a href="mailto:andy@ocmeco.org">andy@ocmeco.org</a>.
+      I read every email; not every email gets a same-week reply.
+    </p>
+  </section>
+</Base>

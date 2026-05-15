@@ -1,0 +1,18 @@
+---
+interface Props {
+  points?: string[];
+}
+
+const { points } = Astro.props;
+---
+
+<aside class="tldr" aria-label="TL;DR summary">
+  <p class="tldr-label">TL;DR</p>
+  {points && points.length > 0 ? (
+    <ul>
+      {points.map((p) => <li>{p}</li>)}
+    </ul>
+  ) : (
+    <slot />
+  )}
+</aside>
