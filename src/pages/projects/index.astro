@@ -3,24 +3,54 @@ import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
 const entries = await getCollection('projects', ({ data }) => !data.draft);
-entries.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+entries.sort((a, b) => {
+  const ao = a.data.order ?? 999;
+  const bo = b.data.order ?? 999;
+  if (ao !== bo) return ao - bo;
+  return (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0);
+});
 
-function fmt(d?: Date) {
-  return d ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
-}
+const futureBets = [
+  { title: 'Robotics', note: 'Hardware that does useful work in the physical world.' },
+  { title: 'Drones', note: 'Aerial autonomy — mapping, inspection, and what comes after.' },
+];
 ---
 
-<Base title="Projects" description="Things I'm building.">
+<Base title="Projects" description="What I'm spending my compute on — paid, unpaid, and everything in between.">
   <h1>Projects</h1>
-  <p>Outside-the-9-to-5 work and the leadership roles attached to it.</p>
+  <p>
+    What I'm spending my compute on right now — regardless of employment status or pay.
+    The ranking is intentional, top to bottom.
+  </p>
 
-  <ul class="post-list">
+  <ul class="project-list">
     {entries.map((p) => (
-      <li>
-        <a class="post-list-title" href={`/projects/${p.id}/`}>{p.data.title}</a>
-        <span class="post-list-meta">{fmt(p.data.date)}</span>
-        {p.data.description && <p class="post-list-desc">{p.data.description}</p>}
+      <li class="project-card">
+        <div class="project-card-header">
+          {p.data.role && <span class="project-role">{p.data.role}</span>}
+          <a class="project-title" href={`/projects/${p.id}/`}>{p.data.title}</a>
+        </div>
+        {p.data.description && <p class="project-desc">{p.data.description}</p>}
+        {p.data.link && (
+          <p class="project-link">
+            <a href={p.data.link}>{p.data.link.replace(/^https?:\/\//, '')} →</a>
+          </p>
+        )}
       </li>
     ))}
   </ul>
+
+  <section class="future-bets">
+    <h2 class="section-label">
+      <span class="section-number">+</span> If I had more time
+    </h2>
+    <ul class="future-list">
+      {futureBets.map((b) => (
+        <li>
+          <span class="future-title">{b.title}</span>
+          <span class="future-note">{b.note}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
 </Base>

@@ -1,13 +1,14 @@
 ---
 date: '2025-08-20'
 draft: false
+order: 1
+role: 'Leading'
+link: 'https://ocmeco.org'
 title: 'Open Commercial Media Ecosystem'
-description: "The member-governed ecosystem rebuilding the creator economy with cryptographically secure identity at the foundation."
+description: "The member-governed ecosystem rebuilding the creator economy with cryptographically secure identity at the foundation. I'm the Executive Director."
 tags: [projects, identity, business]
-cover: '/images/OCME_logo_black.png'
+cover: '/images/ocme-banner.png'
 ---
-
-![OCME Logo](/images/OCME_logo_black.png)
 
 I'm the **Executive Director** of the [Open Commercial Media Ecosystem (OCME)](https://ocmeco.org), a 501(c)(6) member-governed nonprofit rebuilding the creator economy on top of cryptographically secure, tamper-evident identity.
 
@@ -23,13 +24,11 @@ OCME flips the model. Creators, curators, and industry members are members of th
 
 | Metric | Value (as of March 2026) |
 |---|---|
-| Members | 651 |
-| Content pieces | 5,250 |
+| Members | 900+ |
+| Content pieces | 6,500+ |
 | Total DIDs in registry | ~16,686 |
-| DID multiplier per member | ~25.6× |
-| Active uploaders | ~200 |
 
-Live progress against the 2034 master goal: [/2034/](/2034/).
+Live progress against the 2034 master goal: [2034](/2034/).
 
 ## What I do day-to-day
 
@@ -41,12 +40,11 @@ Live progress against the 2034 master goal: [/2034/](/2034/).
 
 ## How this connects to the rest of the work
 
-- **Trust Over IP** — I co-chair the Human Experience Working Group at the Linux Foundation's [Trust Over IP Foundation](/projects/trust-over-ip/). OCME is one of the largest real-world deployments of the trust spanning layer the standard is meant to enable.
 - **The Shifting Current** — My [newsletter and writing](/) document the macro transition OCME exists to navigate. OCME is the hands-on bet that the transition is real.
 - **Personal mission alignment** — OCME is the operational expression of M1 and M2. The site you're reading is M3.
 
 ## Read more
 
 - Site: [ocmeco.org](https://ocmeco.org)
-- Newsletter: [ocmeco.org/newsletter](https://ocmeco.org/newsletter)
+- Newsletter: [The OCME on Substack](https://theocme.substack.com/)
 - Email: [andy@ocmeco.org](mailto:andy@ocmeco.org)

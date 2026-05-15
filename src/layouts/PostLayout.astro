@@ -8,9 +8,10 @@ interface Props {
   tags?: string[];
   cover?: string;
   section?: string;
+  kicker?: string;
 }
 
-const { title, description, date, tags = [], cover, section } = Astro.props;
+const { title, description, date, tags = [], cover, section, kicker } = Astro.props;
 
 const formattedDate = date
   ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -26,6 +27,7 @@ const formattedDate = date
         </a>
       </p>
     )}
+    {kicker && <p class="post-kicker">{kicker}</p>}
     <h1>{title}</h1>
     <p class="post-meta">
       {formattedDate && <span>{formattedDate}</span>}

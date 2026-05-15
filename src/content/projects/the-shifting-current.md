@@ -1,7 +1,11 @@
 ---
 date: '2025-07-25T11:04:07-05:00'
 draft: false
+order: 2
+role: 'Writing'
+link: 'https://shiftingcurrent.substack.com'
 title: 'The Shifting Current'
+description: "Monthly newsletter on the AI/identity transition — making complex shifts accessible so readers can thrive, not just survive."
 tags: [projects, predictions]
 ---
 

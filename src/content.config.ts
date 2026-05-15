@@ -13,6 +13,9 @@ const baseSchema = z.object({
   draft: z.boolean().default(false),
   tags: z.array(z.string()).default([]),
   cover: optionalString,
+  role: optionalString,
+  order: z.number().optional(),
+  link: optionalString,
 });
 
 const projects = defineCollection({
@@ -41,4 +44,13 @@ const curation = defineCollection({
   }),
 });
 
-export const collections = { projects, predictions, ideas, curation };
+const themes = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/themes' }),
+  schema: baseSchema.extend({
+    year: z.string(),
+    range: optionalString,
+    objective: optionalString,
+  }),
+});
+
+export const collections = { projects, predictions, ideas, curation, themes };

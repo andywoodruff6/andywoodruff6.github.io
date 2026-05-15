@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('themes', ({ data }) => !data.draft);
+entries.sort((a, b) => {
+  const ao = a.data.order ?? 999;
+  const bo = b.data.order ?? 999;
+  if (ao !== bo) return ao - bo;
+  return (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0);
+});
+
+const priorThemes = [
+  {
+    year: '2023',
+    name: 'Spring of Optimization → Focus',
+    objective: "Weed out wasted time, then aim what's left at one thing.",
+    summary:
+      'The year split in two. Spring of Optimization (Jan–Jun) cleared idle and low-yield time. Focus (Jun–Dec) pointed the recovered hours at SSI — identity podcasting, the PMP credential, and the start of what would become OCME.',
+  },
+  {
+    year: '2022',
+    range: 'Sep–Dec',
+    name: 'Knowledge Implementation',
+    objective: 'Find and use outlets to express and share knowledge with the world.',
+    summary:
+      'The first theme. Knowledge had been accumulating for years; this was the season to start putting it out — writing, building, teaching. The trial run that proved themes work better than resolutions.',
+  },
+];
+---
+
+<Base title="Themes" description="Five years of yearly themes — the through-line from Knowledge Implementation (2022) to Scale Your Compute (2026).">
+  <h1>Themes</h1>
+  <p>
+    I run my year on a <a href="https://www.themesystem.com/">theme</a>, not a list of resolutions.
+    A theme is a constant reminder of the direction you want to grow — it survives messy weeks the way a
+    rigid metric can't. This is the running record.
+  </p>
+
+  <ul class="theme-list">
+    {entries.map((t) => (
+      <li class="theme-entry">
+        <div class="theme-year">
+          <span class="theme-year-number">{t.data.year}</span>
+          {t.data.range && <span class="theme-year-range">{t.data.range}</span>}
+        </div>
+        <div class="theme-body">
+          <h2 class="theme-name">
+            <a href={`/themes/${t.id}/`}>{t.data.title}</a>
+          </h2>
+          {t.data.objective && <p class="theme-objective">{t.data.objective}</p>}
+          {t.data.description && <p class="theme-summary">{t.data.description}</p>}
+          <p class="theme-link">
+            <a href={`/themes/${t.id}/`}>Read more →</a>
+          </p>
+        </div>
+      </li>
+    ))}
+  </ul>
+
+  <h2 class="section-label"><span class="section-number">·</span> Prior themes</h2>
+  <p class="prior-themes-note">
+    Earlier themes kept here for the through-line, without their own detail pages.
+  </p>
+
+  <ul class="theme-list">
+    {priorThemes.map((t) => (
+      <li class="theme-entry">
+        <div class="theme-year">
+          <span class="theme-year-number">{t.year}</span>
+          {t.range && <span class="theme-year-range">{t.range}</span>}
+        </div>
+        <div class="theme-body">
+          <h2 class="theme-name">{t.name}</h2>
+          <p class="theme-objective">{t.objective}</p>
+          <p class="theme-summary">{t.summary}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</Base>

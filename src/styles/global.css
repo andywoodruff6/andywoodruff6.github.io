@@ -282,6 +282,16 @@ th {
 }
 .post-meta .tag::before { content: '#'; }
 
+.post-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  margin: var(--space-3) 0 -0.4rem;
+}
+
 /* ---- Post lists (ideas / predictions / curation) ---- */
 .post-list {
   list-style: none;
@@ -314,6 +324,175 @@ th {
   margin: 0.3rem 0 0;
   color: var(--color-muted);
   font-size: 0.95rem;
+}
+
+/* ---- Project cards (projects index) ---- */
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 var(--space-4);
+}
+.project-card {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.project-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+.project-role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.1rem 0.45rem;
+  flex-shrink: 0;
+}
+.project-title {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.project-title:hover { color: var(--color-accent); }
+.project-desc {
+  margin: 0 0 0.4rem;
+  color: var(--color-muted);
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
+.project-link {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.project-link a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+.project-link a:hover { color: var(--color-accent); }
+
+/* ---- Themes page ---- */
+.theme-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+}
+.theme-entry {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.theme-entry:first-child { border-top: 1px solid var(--color-rule); }
+.theme-year {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.theme-year-number {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.theme-year-range {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  margin-top: 0.3rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.theme-body {
+  min-width: 0;
+}
+.theme-name {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+  color: var(--color-text);
+}
+.theme-objective {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin: 0 0 var(--space-2);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+.theme-summary {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.theme-link {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+.theme-link a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+.theme-link a:hover { color: var(--color-accent); }
+
+.prior-themes-note {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  margin: -0.3rem 0 var(--space-2);
+}
+
+@media (max-width: 540px) {
+  .theme-entry {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .theme-year { flex-direction: row; align-items: baseline; gap: 0.75rem; }
+}
+
+/* ---- "If I had more time" — future bets ---- */
+.future-bets {
+  margin: var(--space-4) 0;
+}
+.future-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.future-list li {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--color-rule);
+}
+.future-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+.future-note {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.45;
 }
 
 /* ---- Home intro ---- */
