@@ -17,8 +17,8 @@ export async function GET(context: APIContext) {
   all.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
 
   return rss({
-    title: 'Andy Woodruff',
-    description: 'Building self-sovereign identity for 100M people by 2034.',
+    title: 'The Shifting Current',
+    description: 'Andy Woodruff — bringing self-sovereign identity to 100M people by 2034.',
     site: context.site!,
     items: all.map((e) => ({
       title: e.data.title,

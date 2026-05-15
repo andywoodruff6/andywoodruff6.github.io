@@ -1,0 +1,217 @@
+---
+import Base from '../layouts/Base.astro';
+import {
+  SNAPSHOTS,
+  TARGET_DIDS,
+  TARGET_YEAR,
+  MISSION_STATEMENT,
+  latest,
+  progressPct,
+  yearsRemaining,
+  requiredAnnualMultiplier,
+} from '../data/ssi-progress';
+
+const current = latest();
+const pct = progressPct(current);
+const years = yearsRemaining();
+const multiplier = requiredAnnualMultiplier(current);
+
+function fmt(n: number): string {
+  return new Intl.NumberFormat('en-US').format(n);
+}
+
+function fmtMonth(iso: string): string {
+  const [y, m] = iso.split('-');
+  const date = new Date(Number(y), Number(m) - 1, 1);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+}
+---
+
+<Base
+  title="2034: Bring SSI to 100 Million"
+  description="My personal mission: bring self-sovereign identity to 100 million people by 2034. Live progress."
+>
+  <h1>2034</h1>
+  <p class="lede" style="font-size: 1.25rem; color: var(--color-muted); margin-bottom: 2.5rem;">
+    {MISSION_STATEMENT}
+  </p>
+
+  <section class="ssi-counter">
+    <div class="ssi-big">
+      <span class="ssi-now">{fmt(current.totalDIDs)}</span>
+      <span class="ssi-target">of {fmt(TARGET_DIDS)} DIDs</span>
+    </div>
+    <div class="ssi-bar" aria-label={`Progress: ${pct.toFixed(4)}%`}>
+      <div class="ssi-bar-fill" style={`width: ${Math.max(pct, 0.05)}%`}></div>
+    </div>
+    <p class="ssi-meta">
+      <strong>{pct.toFixed(4)}%</strong> of the way there ·
+      <strong>{years} years</strong> remaining ·
+      need to compound at <strong>{multiplier.toFixed(2)}×/year</strong>
+    </p>
+    <p class="ssi-asof">
+      Source: OCME registry. Last verified <strong>{fmtMonth(current.month)}</strong>.
+    </p>
+  </section>
+
+  <h2>Current snapshot — {fmtMonth(current.month)}</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th style="text-align: right;">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Members</td><td style="text-align: right;">{fmt(current.members)}</td></tr>
+      <tr><td>Content pieces</td><td style="text-align: right;">{fmt(current.contentPieces)}</td></tr>
+      <tr><td>Active uploaders</td><td style="text-align: right;">~{fmt(current.activeUploaders)}</td></tr>
+      <tr><td>Total DIDs</td><td style="text-align: right;"><strong>{fmt(current.totalDIDs)}</strong></td></tr>
+      <tr><td>DID multiplier (DIDs per member)</td><td style="text-align: right;">{current.multiplier.toFixed(1)}×</td></tr>
+    </tbody>
+  </table>
+
+  <h2>DID breakdown</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th style="text-align: right;">Count</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {current.breakdown.map((item) => (
+        <tr>
+          <td>{item.type}</td>
+          <td style="text-align: right;">{fmt(item.count)}</td>
+          <td>{item.notes ?? ''}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h2>Why this number</h2>
+
+  <p>
+    Self-sovereign identity (SSI) is the missing trust layer of the digital world.
+    Cryptographically secure, tamper-evident identity that the person — not the platform — controls.
+    Without it, every digital interaction inherits the trust deficit of whoever is running the
+    intermediating server.
+  </p>
+
+  <p>
+    100 million is the threshold where SSI stops being a niche standard and starts being
+    infrastructure people expect. It's roughly 1 in 80 humans alive today. That's not enough
+    to be everyone — it's enough to make "you can have your own identity" the default expectation
+    instead of a curiosity.
+  </p>
+
+  <p>
+    2034 is ten years out from when I committed to the goal. Long enough to compound. Short enough
+    that I have to act every quarter. The math says we need to roughly triple year-over-year for the
+    next decade, which is hard but not unprecedented for infrastructure that crosses the chasm.
+  </p>
+
+  <h2>How we get there</h2>
+
+  <p>
+    Through <a href="/projects/open-commercial-media-ecosystem/">OCME</a>, primarily. Every member
+    of the ecosystem mints a DID. Every piece of content gets DIDs. Every play, every payment, every
+    showrunner agreement adds DIDs to the registry. The multiplier per member matters as much as the
+    member count — currently ~25× per member, climbing as we ship new DID types
+    (revenue receipts, playlists, license records).
+  </p>
+
+  <p>
+    Adjacent levers: the <a href="/projects/trust-over-ip/">Trust Over IP Foundation</a> standards
+    work, partnerships that bring entire creator cohorts in at once
+    (Soulscape ~200, Guild ~2,000, Gato ~600), and any DID-issuing application built on top of the
+    same infrastructure.
+  </p>
+
+  <h2>History</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th style="text-align: right;">Members</th>
+        <th style="text-align: right;">Total DIDs</th>
+        <th style="text-align: right;">Multiplier</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[...SNAPSHOTS].reverse().map((s) => (
+        <tr>
+          <td>{fmtMonth(s.month)}</td>
+          <td style="text-align: right;">{fmt(s.members)}</td>
+          <td style="text-align: right;">{fmt(s.totalDIDs)}</td>
+          <td style="text-align: right;">{s.multiplier.toFixed(1)}×</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <p style="margin-top: 2.5rem; font-size: 0.85rem; color: var(--color-muted);">
+    This page rebuilds from <code>src/data/ssi-progress.ts</code>. Updated monthly when the
+    OCME registry check-in completes.
+  </p>
+</Base>
+
+<style>
+  .ssi-counter {
+    margin: 2.5rem 0;
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--color-rule);
+    border-radius: 8px;
+    background: var(--color-code-bg);
+  }
+  .ssi-big {
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+  .ssi-now {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-accent);
+    letter-spacing: -0.02em;
+  }
+  .ssi-target {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .ssi-bar {
+    height: 12px;
+    background: var(--color-rule);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 1rem 0 1.25rem;
+  }
+  .ssi-bar-fill {
+    height: 100%;
+    background: var(--color-accent);
+    transition: width 600ms ease-out;
+  }
+  .ssi-meta,
+  .ssi-asof {
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    margin: 0.25rem 0;
+  }
+  .ssi-asof {
+    color: var(--color-muted);
+    font-size: 0.82rem;
+  }
+</style>

@@ -164,6 +164,16 @@ th { font-family: var(--font-sans); font-weight: 600; }
   color: var(--color-text);
   letter-spacing: -0.01em;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.site-nav .brand-by {
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+  margin-top: 0.15rem;
 }
 .site-nav ul {
   list-style: none;
