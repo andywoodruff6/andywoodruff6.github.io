@@ -1,0 +1,22 @@
+---
+const lastUpdated = '2026-05-15';
+const items = [
+  { label: 'shipping', value: 'OCME governance v2, Showrunner module' },
+  { label: 'reading', value: 'Superforecasting (Tetlock)' },
+  { label: 'building', value: 'Ekko + PAI integration, Remotion video pipeline' },
+];
+---
+<aside class="currently" aria-label="Currently">
+  <div class="currently-header">
+    <span class="currently-tag">// currently</span>
+    <span class="currently-date">{lastUpdated}</span>
+  </div>
+  <ul class="currently-list">
+    {items.map((item) => (
+      <li>
+        <span class="currently-label">{item.label}</span>
+        <span class="currently-value">{item.value}</span>
+      </li>
+    ))}
+  </ul>
+</aside>

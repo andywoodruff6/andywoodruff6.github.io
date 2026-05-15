@@ -1,0 +1,35 @@
+---
+import {
+  TARGET_DIDS,
+  TARGET_YEAR,
+  latest,
+  progressPct,
+  yearsRemaining,
+  requiredAnnualMultiplier,
+} from '../data/ssi-progress';
+
+const current = latest();
+const pct = progressPct(current);
+const years = yearsRemaining();
+const multiplier = requiredAnnualMultiplier(current);
+
+function fmt(n: number): string {
+  return new Intl.NumberFormat('en-US').format(n);
+}
+---
+<a href="/2034/" class="mission-meter" aria-label={`Mission progress: ${pct.toFixed(4)}% of ${fmt(TARGET_DIDS)} DIDs`}>
+  <div class="mission-meter-row">
+    <span class="mission-meter-now">{fmt(current.totalDIDs)}</span>
+    <span class="mission-meter-sep">/</span>
+    <span class="mission-meter-target">{fmt(TARGET_DIDS)} DIDs by {TARGET_YEAR}</span>
+  </div>
+  <div class="mission-meter-bar" aria-hidden="true">
+    <div class="mission-meter-bar-fill" style={`width: ${Math.max(pct, 0.05)}%`}></div>
+  </div>
+  <div class="mission-meter-meta">
+    <span><strong>{pct.toFixed(4)}%</strong> done</span>
+    <span><strong>{years}</strong> years left</span>
+    <span>need <strong>{multiplier.toFixed(2)}×</strong> / year</span>
+    <span class="mission-meter-more">view full →</span>
+  </div>
+</a>

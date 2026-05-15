@@ -1,8 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import Currently from '../components/Currently.astro';
+import MissionMeter from '../components/MissionMeter.astro';
 import { getCollection } from 'astro:content';
 
-const sectionsToShow = ['ideas', 'predictions', 'curation'] as const;
+const sectionsToShow = ['ideas', 'predictions'] as const;
 
 async function recentFor(section: typeof sectionsToShow[number], n: number) {
   const all = await getCollection(section, ({ data }) => !data.draft);
@@ -11,10 +13,9 @@ async function recentFor(section: typeof sectionsToShow[number], n: number) {
     .slice(0, n);
 }
 
-const [ideas, predictions, curation] = await Promise.all([
-  recentFor('ideas', 4),
+const [predictions, ideas] = await Promise.all([
   recentFor('predictions', 4),
-  recentFor('curation', 4),
+  recentFor('ideas', 4),
 ]);
 
 function fmt(d?: Date) {
@@ -26,33 +27,27 @@ function fmt(d?: Date) {
   <section class="home-intro">
     <h1>Andy Woodruff</h1>
     <p class="lede">
-      I'm the Executive Director of the <a href="https://ocmeco.org">Open Commercial Media Ecosystem</a>,
-      bringing self-sovereign identity to <a href="/2034/">100 million people by 2034</a>.
-      This site is where I think out loud about how — AI, decentralized identity, and what it takes
-      to thrive (not just survive) the next decade.
+      I'm building self-sovereign identity for <a href="/2034/">100 million people by 2034</a>
+      as Executive Director of the <a href="https://ocmeco.org">Open Commercial Media Ecosystem</a>.
     </p>
     <p>
-      <strong>The Shifting Current</strong> — my <a href="https://shiftingcurrent.substack.com">newsletter</a> —
-      goes out roughly monthly. The site is the long-form home: ideas, predictions on the public record,
-      project notes, and what I'm reading.
+      The identity layer is the substrate. Everything else you do is built on top of it. When
+      life went digital, technology providers quietly converted the most fundamental human asset
+      — being a recognizable person in this world — into a permissioned service. 100 million is
+      the tipping point. Below it, it's fringe. Above it, network effects will pull in the next
+      billion without me.
     </p>
+    <blockquote>
+      You cannot be a free person in a world where someone else controls your identity.
+    </blockquote>
   </section>
 
-  <section class="home-section">
-    <h2>Ideas</h2>
-    <ul class="post-list">
-      {ideas.map((p) => (
-        <li>
-          <a class="post-list-title" href={`/ideas/${p.id}/`}>{p.data.title}</a>
-          <span class="post-list-meta">{fmt(p.data.date)}</span>
-          {p.data.description && <p class="post-list-desc">{p.data.description}</p>}
-        </li>
-      ))}
-    </ul>
-  </section>
+  <MissionMeter />
+
+  <Currently />
 
   <section class="home-section">
-    <h2>Predictions</h2>
+    <h2 class="section-label"><span class="section-number">01</span> Predictions</h2>
     <ul class="post-list">
       {predictions.map((p) => (
         <li>
@@ -65,11 +60,11 @@ function fmt(d?: Date) {
   </section>
 
   <section class="home-section">
-    <h2>Curation</h2>
+    <h2 class="section-label"><span class="section-number">02</span> Ideas</h2>
     <ul class="post-list">
-      {curation.map((p) => (
+      {ideas.map((p) => (
         <li>
-          <a class="post-list-title" href={`/curation/${p.id}/`}>{p.data.title}</a>
+          <a class="post-list-title" href={`/ideas/${p.id}/`}>{p.data.title}</a>
           <span class="post-list-meta">{fmt(p.data.date)}</span>
           {p.data.description && <p class="post-list-desc">{p.data.description}</p>}
         </li>

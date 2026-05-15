@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import BadgerLogo from '../components/BadgerLogo.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 interface Props {
   title: string;
@@ -22,6 +24,17 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+        } catch (_) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
     <title>{fullTitle}</title>
     {description && <meta name="description" content={description} />}
     <link rel="canonical" href={canonicalURL} />
@@ -37,14 +50,23 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
     {description && <meta name="twitter:description" content={description} />}
     {resolvedOgImage && <meta name="twitter:image" content={resolvedOgImage} />}
 
+    <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.bunny.net/css?family=ibm-plex-mono:400,500,600|ibm-plex-sans:400,400i,500,600,700&display=swap"
+    />
+
     <link rel="alternate" type="application/rss+xml" title={siteTitle} href="/rss.xml" />
   </head>
   <body>
     <header class="site-header">
       <nav class="site-nav">
         <a href="/" class="brand">
-          Andy Woodruff
-          <span class="brand-by">Executive Director, OCME</span>
+          <BadgerLogo size={36} class="brand-mark" />
+          <span class="brand-text">
+            Andy Woodruff
+            <span class="brand-role">Executive Director · OCME</span>
+          </span>
         </a>
         <ul>
           <li><a href="/2034/">2034</a></li>
@@ -55,6 +77,7 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
           <li><a href="/about/">About</a></li>
           <li><a href="/archives/">Archives</a></li>
         </ul>
+        <ThemeToggle />
       </nav>
     </header>
     <main>
