@@ -1,6 +1,17 @@
 ---
 import Base from './Base.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
+import TLDR from '../components/TLDR.astro';
+import FAQ from '../components/FAQ.astro';
+
+interface AeoQA { q: string; a: string }
+interface Aeo {
+  tldr?: string;
+  claims?: string[];
+  qa?: AeoQA[];
+  entity_type?: 'Article' | 'OpinionNewsArticle' | 'Prediction' | 'Project' | 'Review' | 'Theme';
+  author?: string;
+}
 
 interface Props {
   title: string;
@@ -11,6 +22,8 @@ interface Props {
   section?: string;
   kicker?: string;
   newsletter?: boolean;
+  newsletterTop?: boolean;
+  aeo?: Aeo;
 }
 
 const {
@@ -22,14 +35,49 @@ const {
   section,
   kicker,
   newsletter = true,
+  newsletterTop = true,
+  aeo,
 } = Astro.props;
 
 const formattedDate = date
   ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   : null;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const author = aeo?.author ?? 'Andy Woodruff';
+const entityType = aeo?.entity_type ?? 'Article';
+const schemaType =
+  entityType === 'Prediction' || entityType === 'Project' || entityType === 'Review' || entityType === 'Theme'
+    ? 'Article'
+    : entityType;
+
+const articleJsonLd = aeo
+  ? {
+      '@context': 'https://schema.org',
+      '@type': schemaType,
+      headline: title,
+      ...(description ? { description } : {}),
+      ...(date ? { datePublished: date.toISOString() } : {}),
+      author: {
+        '@type': 'Person',
+        name: author,
+        url: new URL('/about/', Astro.site).toString(),
+      },
+      ...(cover ? { image: new URL(cover, Astro.site).toString() } : {}),
+      mainEntityOfPage: canonicalURL,
+      ...(aeo.tldr ? { articleBody: aeo.tldr } : {}),
+      ...(entityType === 'Prediction' ? { additionalType: 'Prediction' } : {}),
+      ...(entityType === 'Theme' ? { articleSection: 'Annual Theme' } : {}),
+    }
+  : null;
 ---
 
 <Base title={title} description={description} ogImage={cover}>
+  {articleJsonLd && (
+    <Fragment slot="head">
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+    </Fragment>
+  )}
   <article>
     {section && (
       <p class="post-meta">
@@ -49,8 +97,10 @@ const formattedDate = date
       )}
     </p>
     {cover && <img src={cover} alt={title} />}
-    {newsletter && <NewsletterCTA variant="compact" />}
+    {aeo?.tldr && <TLDR>{aeo.tldr}</TLDR>}
+    {newsletter && newsletterTop && <NewsletterCTA variant="compact" />}
     <slot />
+    {aeo?.qa && aeo.qa.length > 0 && <FAQ items={aeo.qa} heading="Questions" />}
     {newsletter && <NewsletterCTA variant="inline" />}
   </article>
 </Base>

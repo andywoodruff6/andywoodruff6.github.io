@@ -24,7 +24,7 @@ tell what's been waiting longest. Promote to a session when picking up.
 - **`/speaking/` page.** Soulscape Apr 9–13 keynote + panel, AMAs #1 and #2, Kaiber/Guild/Gato pitches. Signals availability for the next ones. (2026-05-15)
 - **`/connect/` page with structured intent.** Three buckets: Partnership (OCME), Consulting (Shifting Current Consulting Ops), Press / Speaking. (2026-05-15)
 - **Newsletter integration upgrade.** (a) Above-the-fold CTA on every long post, (b) dedicated `/subscribe/` page with what subscribers get + cadence, (c) preview of the most recent issue. (2026-05-15)
-- **AEO / structured-content blocks.** Add `## TL;DR` and `## Q&A` blocks at the bottom of each post in JSON-LD-friendly markup. Eat the dogfood before pitching the play. (2026-05-15)
+- **AEO / structured-content blocks.** Spec written — see [AEO-SPEC.md](AEO-SPEC.md). Five blocks per post (extended frontmatter, visible TL;DR, body, visible Q&A, invisible JSON-LD). Implementation work: build `TLDR.astro` + `QA.astro` components, extend `content.config.ts` schema with optional `aeo` block, inject JSON-LD in `PostLayout.astro`, retrofit 1 idea + 1 prediction as proof-of-pattern. Future draft→publish skill (#16) bakes AEO in at draft time. (2026-05-15)
 
 ## Operational
 

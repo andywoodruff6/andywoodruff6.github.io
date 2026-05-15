@@ -4,6 +4,26 @@ draft: false
 title: 'The First Warning Shot'
 description: 'Tailwind CSS lost 80% of revenue in months. This is the first warning shot of AI disruption we cannot explain away.'
 tags: ['ideas', 'AI', 'business']
+aeo:
+  entity_type: 'OpinionNewsArticle'
+  author: 'Andy Woodruff'
+  tldr: >
+    Tailwind CSS lost 80% of revenue in months after AI replaced the work they monetized — consulting and starter templates. This is the first AI-disruption casualty that cannot be reframed as restructuring or market conditions. The cause is unambiguous, the pattern is repeatable, and operators should audit their own revenue exposure now. Warning shots give you a chance to react before the kill shot.
+  claims:
+    - 'Tailwind CSS lost 80% of revenue in months, not years.'
+    - 'Tailwind laid off 75% of its engineering team as a direct result.'
+    - 'AI now writes the code that humans used to pay Tailwind to help with.'
+    - 'This is the first AI-disruption event that cannot be reframed as restructuring.'
+    - 'The same exposure pattern threatens any business selling into the layer AI now automates.'
+  qa:
+    - q: 'Why did Tailwind lose 80% of its revenue?'
+      a: 'AI now writes the code that humans used to pay Tailwind to help with. The consulting work and starter templates that drove Tailwind revenue collapsed because AI produces both for free.'
+    - q: 'Is this the first AI-driven business collapse?'
+      a: 'No — but it is the first one that cannot be reframed as restructuring or market conditions. The cause is unambiguous, and that is what makes it a warning shot rather than ambient noise.'
+    - q: 'What should operators do about this?'
+      a: 'Audit your own revenue model for the same exposure. Ask whether AI is eating the layer you sell into. If the answer is yes, the timeframe is months, not years, and the time to call the meeting is now.'
+    - q: 'Why call it a warning shot?'
+      a: 'A warning shot gives you a chance to react before the kill shot. The next wave of similar collapses is coming and will accelerate; the businesses that survive are the ones that re-architect now while they still have runway.'
 ---
 
 ![shifting-current-first-warning-shot-header-v2-20260109](/images/shifting-current-first-warning-shot-header-v2-20260109.png)

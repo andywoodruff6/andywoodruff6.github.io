@@ -6,6 +6,27 @@ const optionalString = z
   .nullish()
   .transform((v) => (v == null || v === '' ? undefined : v));
 
+const aeoSchema = z
+  .object({
+    tldr: optionalString,
+    claims: z.array(z.string()).default([]),
+    qa: z
+      .array(z.object({ q: z.string(), a: z.string() }))
+      .default([]),
+    entity_type: z
+      .enum([
+        'Article',
+        'OpinionNewsArticle',
+        'Prediction',
+        'Project',
+        'Review',
+        'Theme',
+      ])
+      .default('Article'),
+    author: optionalString,
+  })
+  .optional();
+
 const baseSchema = z.object({
   title: z.string(),
   date: z.coerce.date().optional(),
@@ -16,6 +37,7 @@ const baseSchema = z.object({
   role: optionalString,
   order: z.number().optional(),
   link: optionalString,
+  aeo: aeoSchema,
 });
 
 const projects = defineCollection({

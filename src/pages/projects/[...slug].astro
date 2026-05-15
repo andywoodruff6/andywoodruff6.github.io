@@ -18,6 +18,9 @@ const { Content } = await render(entry);
   tags={entry.data.tags}
   cover={entry.data.cover}
   section="projects"
+  newsletter={entry.id === 'the-shifting-current'}
+  newsletterTop={false}
+  aeo={entry.data.aeo}
 >
   <Content />
 </PostLayout>
