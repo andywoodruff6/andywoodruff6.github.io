@@ -5,8 +5,15 @@ import { getCollection } from 'astro:content';
 const entries = await getCollection('ideas', ({ data }) => !data.draft);
 entries.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
 
+const GENERIC = new Set(['ideas', 'idea', 'personal']);
+
+function pillFor(tags: string[]): string {
+  const meaningful = tags.find((t) => !GENERIC.has(t.toLowerCase()));
+  return (meaningful ?? 'Note').toUpperCase();
+}
+
 function fmt(d?: Date) {
-  return d ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+  return d ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : '';
 }
 ---
 
@@ -17,12 +24,15 @@ function fmt(d?: Date) {
     Freedom of thought is only possible when you can express your thoughts and stand behind them.
   </p>
 
-  <ul class="post-list">
+  <ul class="entry-list">
     {entries.map((p) => (
-      <li>
-        <a class="post-list-title" href={`/ideas/${p.id}/`}>{p.data.title}</a>
-        <span class="post-list-meta">{fmt(p.data.date)}</span>
-        {p.data.description && <p class="post-list-desc">{p.data.description}</p>}
+      <li class="entry-card">
+        <div class="entry-card-header">
+          <span class="entry-role">{pillFor(p.data.tags)}</span>
+          <a class="entry-title" href={`/ideas/${p.id}/`}>{p.data.title}</a>
+          {p.data.date && <span class="entry-date">{fmt(p.data.date)}</span>}
+        </div>
+        {p.data.description && <p class="entry-desc">{p.data.description}</p>}
       </li>
     ))}
   </ul>

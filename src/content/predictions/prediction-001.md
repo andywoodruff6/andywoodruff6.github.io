@@ -1,7 +1,11 @@
 ---
 date: '2025-02-17T16:29:25-06:00'
 draft: false
-title: 'Generative AI Social Media Acounts'
+title: 'Generative AI Social Media Accounts'
+description: "Autonomous-agent social media accounts will be indistinguishable from human accounts by July 31, 2025."
+confidence: '90%'
+status: 'Correct'
+target: '2025-07-31'
 tags: [predictions, AI]
 ---
 

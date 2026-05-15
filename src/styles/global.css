@@ -326,24 +326,111 @@ th {
   font-size: 0.95rem;
 }
 
+/* ---- Predictions table ---- */
+.pred-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-3) 0;
+  font-size: 0.92rem;
+}
+.pred-table th {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--color-rule);
+  text-align: left;
+  vertical-align: bottom;
+}
+.pred-table th.num,
+.pred-table td.num {
+  text-align: right;
+  white-space: nowrap;
+}
+.pred-table td {
+  padding: 0.7rem 0.6rem;
+  border-bottom: 1px solid var(--color-rule);
+  vertical-align: top;
+}
+.pred-table .pred-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.pred-table .pred-title:hover { color: var(--color-accent); }
+.pred-table .pred-desc {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: 0.25rem;
+  line-height: 1.45;
+  max-width: 50ch;
+}
+.pred-table .mono { font-family: var(--font-mono); }
+.pred-table .dim { color: var(--color-muted); }
+.pred-table .accent { color: var(--color-accent); font-weight: 600; }
+
+.pred-status {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.pred-status-correct { color: #4D7C0F; }   /* Flexoki green */
+.pred-status-incorrect { color: #AF3029; } /* Flexoki red */
+.pred-status-open { color: var(--color-muted); }
+.pred-status-partial { color: #BC5215; }   /* Flexoki orange-2 */
+[data-theme='dark'] .pred-status-correct { color: #879A39; }
+[data-theme='dark'] .pred-status-incorrect { color: #D14D41; }
+[data-theme='dark'] .pred-status-partial { color: #DA702C; }
+
+@media (max-width: 720px) {
+  .pred-table thead { display: none; }
+  .pred-table tr {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .pred-table td { padding: 0; border: 0; }
+  .pred-table td.num { text-align: left; }
+  .pred-table td.num::before {
+    content: attr(data-label);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-muted);
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+  }
+}
+
 /* ---- Project cards (projects index) ---- */
-.project-list {
+.entry-list {
   list-style: none;
   padding: 0;
   margin: var(--space-3) 0 var(--space-4);
 }
-.project-card {
+.entry-card {
   padding: var(--space-2) 0;
   border-bottom: 1px solid var(--color-rule);
 }
-.project-card-header {
+.entry-card-header {
   display: flex;
   align-items: baseline;
   gap: 0.75rem;
   flex-wrap: wrap;
   margin-bottom: 0.3rem;
 }
-.project-role {
+.entry-role {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -353,7 +440,7 @@ th {
   padding: 0.1rem 0.45rem;
   flex-shrink: 0;
 }
-.project-title {
+.entry-title {
   font-family: var(--font-sans);
   font-size: 1.2rem;
   font-weight: 600;
@@ -361,24 +448,34 @@ th {
   text-decoration: none;
   letter-spacing: -0.01em;
 }
-.project-title:hover { color: var(--color-accent); }
-.project-desc {
+.entry-title:hover { color: var(--color-accent); }
+.entry-date {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.entry-desc {
   margin: 0 0 0.4rem;
   color: var(--color-muted);
   font-size: 0.97rem;
   line-height: 1.5;
 }
-.project-link {
+.entry-link {
   margin: 0;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.02em;
 }
-.project-link a {
+.entry-link a {
   color: var(--color-link);
   text-decoration: none;
 }
-.project-link a:hover { color: var(--color-accent); }
+.entry-link a:hover { color: var(--color-accent); }
 
 /* ---- Themes page ---- */
 .theme-list {

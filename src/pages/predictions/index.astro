@@ -6,36 +6,47 @@ const entries = await getCollection('predictions', ({ data }) => !data.draft);
 entries.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
 
 function fmt(d?: Date) {
-  return d ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+  return d
+    ? d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })
+    : '—';
+}
+
+function statusClass(s: string | undefined): string {
+  const v = (s ?? 'open').toLowerCase();
+  return `pred-status pred-status-${v}`;
 }
 ---
 
-<Base title="Predictions" description="Time-bound, falsifiable predictions.">
+<Base title="Predictions" description="Time-bound, falsifiable predictions — scored after the fact.">
   <h1>Predictions</h1>
   <p>
-    Predictions are how you put yourself in a position to get lucky.
-    The point isn't research — it's putting a stake in the ground that you can be measured against.
-    Inspired by <a href="/curation/superforecasting-by-philip-tetlock/">Superforecasting</a>.
+    Predictions are how you put yourself in a position to get lucky. The point isn't research — it's
+    putting a stake in the ground that you can be measured against. Each one is time-bound and
+    falsifiable. Inspired by
+    <a href="/curation/superforecasting-by-philip-tetlock/">Superforecasting</a>.
   </p>
 
-  <table>
+  <table class="pred-table">
     <thead>
       <tr>
         <th>Prediction</th>
-        <th>Confidence</th>
+        <th class="num">Conf.</th>
         <th>Status</th>
-        <th>Made</th>
-        <th>Target</th>
+        <th class="num">Made</th>
+        <th class="num">Target</th>
       </tr>
     </thead>
     <tbody>
       {entries.map((p) => (
         <tr>
-          <td><a href={`/predictions/${p.id}/`}>{p.data.title}</a></td>
-          <td>{p.data.confidence ?? '—'}</td>
-          <td>{p.data.status ?? '—'}</td>
-          <td>{fmt(p.data.date)}</td>
-          <td>{fmt(p.data.target)}</td>
+          <td>
+            <a class="pred-title" href={`/predictions/${p.id}/`}>{p.data.title}</a>
+            {p.data.description && <div class="pred-desc">{p.data.description}</div>}
+          </td>
+          <td class="num mono accent">{p.data.confidence ?? '—'}</td>
+          <td><span class={statusClass(p.data.status)}>{p.data.status ?? 'Open'}</span></td>
+          <td class="num mono dim">{fmt(p.data.date)}</td>
+          <td class="num mono dim">{fmt(p.data.target)}</td>
         </tr>
       ))}
     </tbody>

@@ -23,16 +23,16 @@ const futureBets = [
     The ranking is intentional, top to bottom.
   </p>
 
-  <ul class="project-list">
+  <ul class="entry-list">
     {entries.map((p) => (
-      <li class="project-card">
-        <div class="project-card-header">
-          {p.data.role && <span class="project-role">{p.data.role}</span>}
-          <a class="project-title" href={`/projects/${p.id}/`}>{p.data.title}</a>
+      <li class="entry-card">
+        <div class="entry-card-header">
+          {p.data.role && <span class="entry-role">{p.data.role}</span>}
+          <a class="entry-title" href={`/projects/${p.id}/`}>{p.data.title}</a>
         </div>
-        {p.data.description && <p class="project-desc">{p.data.description}</p>}
+        {p.data.description && <p class="entry-desc">{p.data.description}</p>}
         {p.data.link && (
-          <p class="project-link">
+          <p class="entry-link">
             <a href={p.data.link}>{p.data.link.replace(/^https?:\/\//, '')} →</a>
           </p>
         )}

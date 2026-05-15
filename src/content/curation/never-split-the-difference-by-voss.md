@@ -2,7 +2,7 @@
 date: '2025-03-21T12:51:43-05:00'
 draft: false
 title: 'Never Split The Difference by Voss'
-description: 
+description: "FBI hostage-negotiation tactics translated into everyday conversation — tactical empathy, mirroring, labeling, and the questions that actually move people."
 tags: [books, business]
 ---
 

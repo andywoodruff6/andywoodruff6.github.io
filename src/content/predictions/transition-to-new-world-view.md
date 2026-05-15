@@ -2,6 +2,10 @@
 date: '2025-08-09'
 draft: false
 title: 'Transition to a New World View'
+description: "By 2050 the rules of the game change — AI, clean-energy commoditization, and bioengineering converge into a New Enlightenment."
+confidence: '70%'
+status: 'Open'
+target: '2050-01-01'
 tags: [predictions]
 ---
 

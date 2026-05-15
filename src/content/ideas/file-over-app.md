@@ -2,6 +2,7 @@
 date: '2025-02-10T20:38:13-06:00'
 draft: false
 title: 'File Over App'
+description: "Apps die, formats change, companies vanish. If you want digital artifacts that outlast the tool that made them, keep them as portable files in open formats you control."
 tags: [ideas, tech]
 ---
 
