@@ -30,6 +30,23 @@
   --space-3: 1.5rem;
   --space-4: 2.5rem;
   --space-5: 4rem;
+
+  /* Breakpoints — documentation references (CSS spec disallows
+     custom properties in @media condition; reference token in
+     comment next to each literal) */
+  --bp-sm: 480px;
+  --bp-md: 640px;
+  --bp-lg: 768px;
+  --bp-xl: 1024px;
+
+  /* Fluid type ramp */
+  --fs-h1:   clamp(1.875rem, 1.4rem + 2.2vw, 2.5rem);
+  --fs-h2:   clamp(1.35rem,  1.15rem + 1vw,  1.625rem);
+  --fs-h3:   clamp(1.1rem,   1rem + 0.5vw,   1.25rem);
+  --fs-hero: clamp(2rem,     1.3rem + 3.2vw, 2.75rem);
+
+  /* Touch target floor */
+  --tap: 44px;
 }
 
 /* Dark theme: explicit toggle (data-theme="dark") OR system preference when
