@@ -441,78 +441,6 @@ th {
 [data-theme='dark'] .pred-status-incorrect { color: #D14D41; }
 [data-theme='dark'] .pred-status-partial { color: #DA702C; }
 
-/* ---- Responsive: grid collapse at --bp-md (640px) ---- */
-@media (max-width: 640px) { /* --bp-md */
-  /* Predictions table → card stack (regression anchor) */
-  .pred-table thead { display: none; }
-  .pred-table tr {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
-    padding: var(--space-2) 0;
-    border-bottom: 1px solid var(--color-rule);
-  }
-  .pred-table td { padding: 0; border: 0; }
-  .pred-table td.num { text-align: left; }
-  .pred-table td.num::before {
-    content: attr(data-label);
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--color-muted);
-    margin-right: 0.5rem;
-    text-transform: uppercase;
-  }
-
-  /* Currently list — label becomes mono kicker above value */
-  .currently-list li {
-    grid-template-columns: 1fr;
-    gap: 0.1rem;
-    margin: 0.65rem 0;
-  }
-
-  /* Future bets — timeframe becomes accent mono kicker above title */
-  .future-list li {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
-    align-items: start;
-  }
-  .future-list .future-note {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--color-accent);
-    order: -1;
-  }
-
-  /* Themes — year + range render as inline mono line above theme name */
-  .theme-entry {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
-  }
-  .theme-year {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 0.45rem;
-  }
-  .theme-year-number {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--color-muted);
-    font-weight: 500;
-  }
-  .theme-year-number::after {
-    content: '·';
-    color: var(--color-muted);
-    margin-left: 0.45rem;
-  }
-  .theme-year-range {
-    margin-top: 0;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-  }
-}
-
 /* ---- Project cards (projects index) ---- */
 .entry-list {
   list-style: none;
@@ -1051,4 +979,77 @@ th {
 .site-footer a.footer-subscribe:hover {
   color: var(--color-link);
   text-decoration: underline;
+}
+
+/* ─── RESPONSIVE: grid collapse at --bp-md (640px) ─────────────── */
+/* Placed at end-of-file so source order beats desktop rules above. */
+@media (max-width: 640px) { /* --bp-md */
+  /* Predictions table → card stack (regression anchor) */
+  .pred-table thead { display: none; }
+  .pred-table tr {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .pred-table td { padding: 0; border: 0; }
+  .pred-table td.num { text-align: left; }
+  .pred-table td.num::before {
+    content: attr(data-label);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-muted);
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  /* Currently list — label becomes mono kicker above value */
+  .currently-list li {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+    margin: 0.65rem 0;
+  }
+
+  /* Future bets — timeframe becomes accent mono kicker above title */
+  .future-list li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    align-items: start;
+  }
+  .future-list .future-note {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+    order: -1;
+  }
+
+  /* Themes — year + range render as inline mono line above theme name */
+  .theme-entry {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .theme-year {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.45rem;
+  }
+  .theme-year-number {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    font-weight: 500;
+  }
+  .theme-year-number::after {
+    content: '·';
+    color: var(--color-muted);
+    margin-left: 0.45rem;
+  }
+  .theme-year-range {
+    margin-top: 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
 }
