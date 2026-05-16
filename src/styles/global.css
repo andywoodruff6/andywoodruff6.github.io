@@ -2,15 +2,35 @@
    Andy Woodruff — design system
    Palette: Flexoki (Steph Ango) + accent matched to badger logo
    Type: IBM Plex Serif / Sans / Mono (via Bunny Fonts in Base.astro)
+   ---------------------------------------------------------------------------
+   Table of contents
+     TOKENS      :root design tokens (colors, type, spacing, breakpoints)
+     RESET       box-sizing, html, body
+     TYPE        headings, paragraphs, links, lists, code, tables
+     LAYOUT      main, site-header, site-footer
+     NAV         site-nav, theme-toggle
+     COMPONENTS  post-meta, post-list, pred-table, entry-card, theme-entry,
+                 future-list, home-intro, mission-meter, currently, tldr,
+                 newsletter-cta, faq, page-intro, btn-cta, static-list
+     RESPONSIVE  @media blocks co-located with their components; active
+                 queries are --bp-sm (480px) and --bp-md (640px)
    =========================================================================== */
 
 :root {
+  /* Breakpoints — documentation references (CSS spec disallows
+     custom properties in @media condition; reference token in
+     comment next to each literal) */
+  --bp-lg: 768px;
+  --bp-md: 640px;
+  --bp-sm: 480px;
+  --bp-xl: 1024px;
+
   /* Flexoki light — paper + ink */
   --color-bg:       #FFFCF0;
   --color-bg-2:     #F2E9DA;
-  --color-text:     #100F0F;
   --color-muted:    #6F6E69;
   --color-rule:     #CECDC3;
+  --color-text:     #100F0F;
 
   /* Action colors */
   --color-accent:   #DA702C;  /* Flexoki orange — matches badger */
@@ -20,30 +40,23 @@
   --color-code-bg:  #F2E9DA;
 
   /* Type — IBM Plex family, system fallbacks tuned to match */
-  --font-serif: 'IBM Plex Serif', ui-serif, Georgia, 'Iowan Old Style', serif;
-  --font-sans:  'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono:  'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-
-  --measure: 68ch;
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 1.5rem;
-  --space-4: clamp(1.5rem, 1rem + 2vw, 2.5rem);
-  --space-5: 4rem;
-
-  /* Breakpoints — documentation references (CSS spec disallows
-     custom properties in @media condition; reference token in
-     comment next to each literal) */
-  --bp-sm: 480px;
-  --bp-md: 640px;
-  --bp-lg: 768px;
-  --bp-xl: 1024px;
+  --font-sans:  'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'IBM Plex Serif', ui-serif, Georgia, 'Iowan Old Style', serif;
 
   /* Fluid type ramp */
   --fs-h1:   clamp(1.875rem, 1.4rem + 2.2vw, 2.5rem);
   --fs-h2:   clamp(1.35rem,  1.15rem + 1vw,  1.625rem);
   --fs-h3:   clamp(1.1rem,   1rem + 0.5vw,   1.25rem);
   --fs-hero: clamp(2rem,     1.3rem + 3.2vw, 2.75rem);
+
+  /* Layout rhythm */
+  --measure: 68ch;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  --space-5: 4rem;
 
   /* Touch target floor */
   --tap: 44px;
@@ -428,9 +441,6 @@ th {
 [data-theme='dark'] .pred-status-incorrect { color: #D14D41; }
 [data-theme='dark'] .pred-status-partial { color: #DA702C; }
 
-@media (max-width: 720px) {
-}
-
 /* ---- Responsive: grid collapse at --bp-md (640px) ---- */
 @media (max-width: 640px) { /* --bp-md */
   /* Predictions table → card stack (regression anchor) */
@@ -642,9 +652,6 @@ th {
   font-size: 0.82rem;
   color: var(--color-muted);
   margin: -0.3rem 0 var(--space-2);
-}
-
-@media (max-width: 540px) {
 }
 
 /* ---- "If I had more time" — future bets ---- */
@@ -951,7 +958,7 @@ th {
   font-size: 0.85rem;
   color: var(--color-muted);
 }
-@media (max-width: 540px) {
+@media (max-width: 480px) { /* --bp-sm */
   .newsletter-cta {
     flex-direction: column;
     align-items: flex-start;
