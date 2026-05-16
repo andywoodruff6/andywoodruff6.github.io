@@ -7,7 +7,7 @@ const collections = ['projects', 'predictions', 'ideas', 'curation'] as const;
 const allEntries = (
   await Promise.all(
     collections.map(async (c) => {
-      const entries = await getCollection(c, ({ data }) => !data.draft);
+      const entries = await getCollection(c, ({ data }) => import.meta.env.DEV || !data.draft);
       return entries.map((e) => ({ ...e, section: c }));
     })
   )

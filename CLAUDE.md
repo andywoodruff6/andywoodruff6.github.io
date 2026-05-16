@@ -57,6 +57,7 @@ public/                # static assets only — served at site root
 - **Images**: drop in `public/images/`, reference as `/images/filename.png`. Astro serves `public/` at root.
 - **Headings**: anything smaller than `h3` looks too small. Stop at `h3`.
 - **Schemas**: every collection has a Zod schema in `src/content.config.ts`. Frontmatter is type-checked at build time — `bun run typecheck` catches mismatches.
+- **Drafts**: set `draft: true` in frontmatter. Filter is DEV-visible, PROD-hidden — entry appears in `bun run dev` and is excluded from `bun run build` / Cloudflare. The 13 `getCollection` call-sites use the pattern `({ data }) => import.meta.env.DEV || !data.draft`; keep this pattern when adding new pages or listings.
 
 ## Adding a New Page
 

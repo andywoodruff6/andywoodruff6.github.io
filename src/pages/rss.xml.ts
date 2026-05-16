@@ -8,7 +8,7 @@ export async function GET(context: APIContext) {
   const all = (
     await Promise.all(
       sections.map(async (s) => {
-        const entries = await getCollection(s, ({ data }) => !data.draft);
+        const entries = await getCollection(s, ({ data }) => import.meta.env.DEV || !data.draft);
         return entries.map((e) => ({ ...e, section: s }));
       })
     )

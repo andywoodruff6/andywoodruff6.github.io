@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 const sectionsToShow = ['ideas', 'predictions'] as const;
 
 async function recentFor(section: typeof sectionsToShow[number], n: number) {
-  const all = await getCollection(section, ({ data }) => !data.draft);
+  const all = await getCollection(section, ({ data }) => import.meta.env.DEV || !data.draft);
   return all
     .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0))
     .slice(0, n);

@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const entries = await getCollection('ideas', ({ data }) => !data.draft);
+const entries = await getCollection('ideas', ({ data }) => import.meta.env.DEV || !data.draft);
 entries.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
 
 const GENERIC = new Set(['ideas', 'idea', 'personal']);
