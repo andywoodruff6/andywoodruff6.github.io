@@ -71,4 +71,34 @@ function fmt(d?: Date) {
       ))}
     </ul>
   </section>
+
+  <section class="home-section">
+    <h2 class="section-label"><span class="section-number">03</span> Newsletter</h2>
+    <p>Subscribe to <a href="https://shiftingcurrent.substack.com">The Shifting Current</a> for essays on identity, agency, and the transition.</p>
+    <div class="substack-embed">
+      <iframe
+        src="https://shiftingcurrent.substack.com/embed?transparent=1"
+        title="Subscribe to The Shifting Current on Substack"
+        loading="lazy"
+        width="480"
+        height="320"
+      ></iframe>
+    </div>
+  </section>
 </Base>
+
+<style>
+  .substack-embed {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .substack-embed iframe {
+    border: 0;
+    background: transparent;
+    width: 100%;
+    max-width: 480px;
+    height: 320px;
+    display: block;
+  }
+</style>
