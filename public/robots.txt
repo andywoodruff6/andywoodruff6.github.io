@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andywoodruff.net/sitemap-index.xml
