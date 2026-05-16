@@ -9,10 +9,6 @@ const optionalString = z
 const aeoSchema = z
   .object({
     tldr: optionalString,
-    claims: z.array(z.string()).default([]),
-    qa: z
-      .array(z.object({ q: z.string(), a: z.string() }))
-      .default([]),
     entity_type: z
       .enum([
         'Article',

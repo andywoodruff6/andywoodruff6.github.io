@@ -2,13 +2,9 @@
 import Base from './Base.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
 import TLDR from '../components/TLDR.astro';
-import FAQ from '../components/FAQ.astro';
 
-interface AeoQA { q: string; a: string }
 interface Aeo {
   tldr?: string;
-  claims?: string[];
-  qa?: AeoQA[];
   entity_type?: 'Article' | 'OpinionNewsArticle' | 'Prediction' | 'Project' | 'Review' | 'Theme';
   author?: string;
 }
@@ -22,7 +18,6 @@ interface Props {
   section?: string;
   kicker?: string;
   newsletter?: boolean;
-  newsletterTop?: boolean;
   aeo?: Aeo;
 }
 
@@ -35,7 +30,6 @@ const {
   section,
   kicker,
   newsletter = true,
-  newsletterTop = true,
   aeo,
 } = Astro.props;
 
@@ -98,9 +92,7 @@ const articleJsonLd = aeo
     </p>
     {cover && <img src={cover} alt={title} />}
     {aeo?.tldr && <TLDR>{aeo.tldr}</TLDR>}
-    {newsletter && newsletterTop && <NewsletterCTA variant="compact" />}
     <slot />
-    {aeo?.qa && aeo.qa.length > 0 && <FAQ items={aeo.qa} heading="Questions" />}
     {newsletter && <NewsletterCTA variant="inline" />}
   </article>
 </Base>
