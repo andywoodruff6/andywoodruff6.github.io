@@ -419,6 +419,11 @@ th {
 [data-theme='dark'] .pred-status-partial { color: #DA702C; }
 
 @media (max-width: 720px) {
+}
+
+/* ---- Responsive: grid collapse at --bp-md (640px) ---- */
+@media (max-width: 640px) { /* --bp-md */
+  /* Predictions table → card stack (regression anchor) */
   .pred-table thead { display: none; }
   .pred-table tr {
     display: grid;
@@ -435,6 +440,55 @@ th {
     font-size: 0.7rem;
     color: var(--color-muted);
     margin-right: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  /* Currently list — label becomes mono kicker above value */
+  .currently-list li {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+    margin: 0.65rem 0;
+  }
+
+  /* Future bets — timeframe becomes accent mono kicker above title */
+  .future-list li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    align-items: start;
+  }
+  .future-list .future-note {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+    order: -1;
+  }
+
+  /* Themes — year + range render as inline mono line above theme name */
+  .theme-entry {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .theme-year {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.45rem;
+  }
+  .theme-year-number {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    font-weight: 500;
+  }
+  .theme-year-number::after {
+    content: '·';
+    color: var(--color-muted);
+    margin-left: 0.45rem;
+  }
+  .theme-year-range {
+    margin-top: 0;
+    font-size: 0.85rem;
     text-transform: uppercase;
   }
 }
@@ -581,11 +635,6 @@ th {
 }
 
 @media (max-width: 540px) {
-  .theme-entry {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  .theme-year { flex-direction: row; align-items: baseline; gap: 0.75rem; }
 }
 
 /* ---- "If I had more time" — future bets ---- */
