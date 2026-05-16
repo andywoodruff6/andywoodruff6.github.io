@@ -1,6 +1,6 @@
 # Andy Woodruff
 
-Personal site for [theshiftingcurrent.com](https://theshiftingcurrent.com). Built with Astro, deployed via Cloudflare Pages.
+Personal site for [andywoodruff.net](https://andywoodruff.net). Built with Astro, deployed via Cloudflare Pages.
 
 ## Local Development
 

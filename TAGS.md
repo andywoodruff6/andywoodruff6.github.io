@@ -41,7 +41,7 @@ This document defines the rules and conventions for tagging content on the perso
 - **Single letter tags** (`a`, `x`)
 - **Overly generic tags** (`stuff`, `misc`, `other`)
 - **Redundant tags** that duplicate the content section (e.g., don't tag a file in `/curation/` with `curation`)
-- **Date-based tags** - Hugo handles dates in front matter
+- **Date-based tags** — `date` already lives in frontmatter
 
 ## Before Adding a New Tag
 

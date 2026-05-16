@@ -1,48 +1,79 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code working in this repo. Stack and commands are documented in [README.md](README.md) — this file covers conventions, gotchas, and Claude-specific rules that aren't obvious from the code.
 
 ## Project Overview
 
-This is Andy Woodruff's personal website built with Hugo static site generator using the PaperMod theme. The site features a personal blog with sections for Projects, Predictions, Ideas, and Curation content.
+Andy Woodruff's personal site at [andywoodruff.net](https://andywoodruff.net) (the local repo dir is still named `theshiftingcurrent-com` from before the rebrand). Astro static site, deployed via Cloudflare Pages on push to `main`.
 
-## Development Commands
+## Stack
 
-- `hugo server -D --ignoreCache` - Start local development server with drafts enabled and cache ignored
-- `hugo new content content/folder/name.md` - Create a new markdown file in the specified folder
-- `hugo new --kind review content/reviews/my-new-review.md` - Create a file with a specific archetype
-- `hugo` - Build the static site (outputs to `public/` directory)
+- **Astro 5** — static site generator, content collections, MDX
+- **Bun** — package manager and runtime (never npm/npx)
+- **TypeScript** — `astro check` for typechecking
+- **Cloudflare Pages** — auto-deploys from `main`
 
-## Architecture
+Canonical commands (from README.md):
 
-### Content Structure
-- `content/` - All markdown content files organized by section
-  - `projects/` - Project descriptions and case studies
-  - `predictions/` - Future predictions and analysis
-  - `ideas/` - Personal thoughts and ideas
-  - `curation/` - Curated content and book reviews
-  - `about/` - About page content
-  - `archives/` - Archive page
+| Purpose | Command |
+|---|---|
+| Install deps | `bun install` |
+| Local dev (`http://localhost:4321`) | `bun run dev` |
+| Production build (→ `dist/`) | `bun run build` |
+| Preview production build | `bun run preview` |
+| Typecheck | `bun run typecheck` |
 
-### Theme Customization
-- `layouts/` - Custom layout overrides for the PaperMod theme
-- `assets/css/` - Custom CSS files that extend the theme
-- Theme files are in `themes/PaperMod/` but should not be modified directly
-- Use `layouts/` directory to override theme templates
+## Layout
 
-### Configuration
-- `config.yaml` - Main Hugo configuration with site settings, menu structure, and PaperMod theme parameters
-- Navigation menu defined with Projects, Predictions, Ideas, Curation, About, and Archives sections
+```
+src/
+  content.config.ts    # Zod schemas per content collection
+  content/
+    projects/          # markdown collection
+    predictions/
+    ideas/
+    curation/
+    themes/            # yearly themes (Knowledge Implementation 2022 → present)
+  pages/
+    index.astro
+    about.astro
+    archives.astro
+    rss.xml.ts         # RSS feed for all collections
+    {collection}/index.astro       # listing
+    {collection}/[...slug].astro   # single post
+  layouts/             # Base.astro, PostLayout.astro
+  components/
+  styles/global.css
+public/                # static assets only — served at site root
+  images/              # → /images/*
+  llms.txt             # → /llms.txt (intentional SEO file for LLMs)
+```
 
-### Static Assets
-- `static/images/` - Images used in content (copied to `public/images/`)
-- `public/` - Generated static site (do not edit directly)
+## Content Conventions
 
-## Content Creation Notes
+- **Frontmatter**: YAML (`---`) only. Never TOML.
+- **Required**: `title`. **Common**: `date`, `description`, `tags`, `cover`, `draft`.
+- **Tags**: max 5 per file, only approved values — see [TAGS.md](TAGS.md).
+- **Images**: drop in `public/images/`, reference as `/images/filename.png`. Astro serves `public/` at root.
+- **Headings**: anything smaller than `h3` looks too small. Stop at `h3`.
+- **Schemas**: every collection has a Zod schema in `src/content.config.ts`. Frontmatter is type-checked at build time — `bun run typecheck` catches mismatches.
 
-- **Front matter**: Use YAML format (`---`) not TOML (`+++`) for all content files
-- All content sections use front matter for metadata
-- Images should be placed in `static/images/` and referenced as `/images/filename.jpg`
-- The site uses PaperMod theme features like cover images, breadcrumbs, and share buttons
-- Headings smaller than h3 appear too small per the README guidance
-- **Tagging**: Follow the rules in [TAGS.md](TAGS.md) - max 5 tags, use approved tags only
+## Adding a New Page
+
+- **New post in an existing collection**: drop a `.md` or `.mdx` in `src/content/{collection}/`. The dynamic route `[...slug].astro` picks it up automatically.
+- **New top-level page**: add a `.astro` file in `src/pages/`. Filename = URL.
+- **New collection**: add the schema to `src/content.config.ts`, create `src/content/{name}/`, then a listing + dynamic route in `src/pages/{name}/`.
+
+## Other Repo Files
+
+- [README.md](README.md) — canonical setup, build, deploy
+- [TAGS.md](TAGS.md) — tag rules and approved tag list
+- [AEO-SPEC.md](AEO-SPEC.md) — Answer Engine Optimization spec for the site
+- [BACKLOG.md](BACKLOG.md) — outstanding work
+- `Plans/` — one-off planning artifacts (not load-bearing)
+
+## Gotchas
+
+- **Bun, not npm.** Zero exceptions.
+- **`public/` is served at site root** — anything in there ships verbatim. Don't dump build output there; that's `dist/`.
+- **`dist/` and `.astro/` are gitignored.** Never commit either.

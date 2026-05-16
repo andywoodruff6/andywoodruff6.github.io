@@ -1,0 +1,38 @@
+# The Shifting Current
+
+> Personal website of Andy Woodruff. Andy is the Executive Director of the Open Commercial Media Ecosystem (OCME), co-chair of the Human Experience Working Group at the Trust over IP Foundation, and a PMP-certified product owner and project manager with a mechanical engineering degree. The Shifting Current explores AI economics, personal AI infrastructure, creator-governed content, and predictions about technological transformation. Andy's thesis: intelligence costs have dropped 833x and are still falling, creating a once-in-a-generation opportunity for individuals who learn to leverage AI tools now.
+
+The site covers four content pillars: Technology as Liberation (AI economics, agentic AI, personal AI workflows), Conscious Curation (book reviews and key insights), Predictions (structured, tracked predictions with likelihood scores), and Autonomy Reclamation (creator governance, decentralized identity, new economic models). Andy also offers AI workspace setup consulting — five workflows installed and configured in a single session.
+
+## Ideas
+
+- [833x: The New Economics of Intelligence](https://andywoodruff.net/ideas/833x-the-new-economics-of-intelligence/): Original analysis comparing the cost of human knowledge work ($8,333/M tokens) to AI ($10/M tokens) — an 833x cost difference, declining 10x per year.
+- [The First Warning Shot](https://andywoodruff.net/ideas/the-first-warning-shot/): Analysis of Tailwind CSS losing 80% of revenue in months as AI replaced their consulting and template business. A warning for any business model built on work AI can do.
+- [Refining the 2026 Startup Thesis](https://andywoodruff.net/ideas/refining-the-2026-startup-thesis/): Commentary on Greg Isenberg's "20 Mega Shifts" thread with original thinking on moats, SaaS disruption, and creator economics in the age of AI.
+- [Yearly Theme 2026: Scale Your Compute](https://andywoodruff.net/ideas/yearly-theme-2026/): Why yearly themes beat resolutions, and why 2026's theme is building systems that multiply output — each unit of effort yielding more than one unit of result.
+- [File Over App](https://andywoodruff.net/ideas/file_over_app/): The philosophy of using open file formats (.md, .txt, .csv) over proprietary apps to ensure digital artifacts last a lifetime.
+
+## Predictions
+
+- [Transition to a New World View](https://andywoodruff.net/predictions/transition-to-new-world-view/): Prediction that the world is entering a "New Enlightenment" driven by AI, clean energy, and bioengineering, with success criteria tracked through 2050.
+- [Generative AI Social Media Accounts](https://andywoodruff.net/predictions/prediction-001/): Prediction (confirmed) that autonomous agent social media accounts would be indistinguishable from humans by mid-2025.
+
+## Curation
+
+- [Superforecasting by Philip Tetlock](https://andywoodruff.net/curation/superforecasting_by_philip_tetlock/): Book review with actionable prediction methodology — breaking problems into sub-problems, outside view anchoring, continuous refinement, and prediction pooling.
+- [Never Split the Difference by Chris Voss](https://andywoodruff.net/curation/never_split_the_difference_by_voss/): Extracted negotiation techniques including mirroring, labeling, calibrated questions, and tactical empathy.
+- [Start with Why by Simon Sinek](https://andywoodruff.net/curation/start-with-why/): Review with World View Adjustment framework — why great companies and individuals work inside-out from purpose.
+
+## Projects
+
+- [Open Commercial Media Ecosystem](https://andywoodruff.net/projects/open_commercial_media_ecosystem/): Andy serves as Executive Director of OCME, a 501(c)(6) non-profit creator ecosystem with 600+ members, 6,000+ content pieces, and creator-governed content model.
+- [Trust over IP](https://andywoodruff.net/projects/trust_over_ip/): Andy co-chairs the Human Experience Working Group at this Linux Foundation project building standards for digital trust and decentralized identity.
+- [The Shifting Current](https://andywoodruff.net/projects/the-shifting-current/): This blog — the primary expression of Andy's mission to build awareness of the transition to a new world view.
+
+## Services
+
+- [AI Workspace Setup](https://andywoodruff.net/services/): Five AI-powered workflows (meeting notes, knowledge system, AI agent, visual content, reports) installed on your computer in a single two-hour session. No subscription. No retainer.
+
+## About
+
+- [About Andy Woodruff](https://andywoodruff.net/about/): Bio, global problems Andy is working on, and personal mission statements.

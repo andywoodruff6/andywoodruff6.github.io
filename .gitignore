@@ -24,3 +24,6 @@ Thumbs.db
 /resources/_gen/
 hugo_stats.json
 .hugo_build.lock
+
+# Claude Code project-local state
+.claude/
