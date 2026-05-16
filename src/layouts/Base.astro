@@ -11,11 +11,40 @@ interface Props {
 
 const { title, description, ogImage } = Astro.props;
 const siteTitle = 'Andy Woodruff';
+const siteTagline =
+  'Andy Woodruff — Executive Director of OCME. Writing on self-sovereign identity, creator-governed ecosystems, and the Human 3.0 transition.';
 const newsletterName = 'The Shifting Current';
 const author = siteTitle;
 const fullTitle = title === siteTitle ? title : `${title} — ${siteTitle}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : undefined;
+const resolvedDescription = description ?? siteTagline;
+const siteUrl = Astro.site?.toString() ?? 'https://andywoodruff.net/';
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Andy Woodruff',
+  url: siteUrl,
+  jobTitle: 'Executive Director, Open Commercial Media Ecosystem',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Open Commercial Media Ecosystem',
+    url: 'https://ocmeco.org',
+  },
+  image: new URL('/images/andy-soulscape.png', siteUrl).toString(),
+  sameAs: ['https://ocmeco.org', 'https://shiftingcurrent.substack.com'],
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteTitle,
+  url: siteUrl,
+  description: siteTagline,
+  author: { '@type': 'Person', name: 'Andy Woodruff', url: siteUrl },
+};
 ---
 
 <!doctype html>
@@ -35,19 +64,25 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
       })();
     </script>
     <title>{fullTitle}</title>
-    {description && <meta name="description" content={description} />}
+    <meta name="description" content={resolvedDescription} />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
-    {description && <meta property="og:description" content={description} />}
+    <meta property="og:description" content={resolvedDescription} />
     <meta property="og:url" content={canonicalURL} />
     {resolvedOgImage && <meta property="og:image" content={resolvedOgImage} />}
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
-    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:description" content={resolvedDescription} />
     {resolvedOgImage && <meta name="twitter:image" content={resolvedOgImage} />}
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+    {isHome && (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+    )}
 
     <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
     <link

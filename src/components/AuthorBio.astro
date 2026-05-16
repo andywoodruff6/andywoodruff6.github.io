@@ -1,0 +1,69 @@
+---
+const name = 'Andy Woodruff';
+const role = 'Executive Director, Open Commercial Media Ecosystem (OCME)';
+const bio =
+  'I co-chair the Human Experience Working Group at the Trust Over IP Foundation. I write about self-sovereign identity, creator-governed ecosystems, and the transition to Human 3.0. Background: ME engineering, PMP, product, smart contracts.';
+const avatar = '/images/andy-soulscape.png';
+---
+
+<aside class="author-bio" aria-label="About the author">
+  <img class="author-bio-avatar" src={avatar} alt={`Portrait of ${name}`} width="72" height="72" loading="lazy" />
+  <div class="author-bio-text-wrap">
+    <p class="author-bio-name">
+      <a href="/about/">{name}</a>
+    </p>
+    <p class="author-bio-role">{role}</p>
+    <p class="author-bio-text">{bio}</p>
+  </div>
+</aside>
+
+<style>
+  .author-bio {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin: 3rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--accent, #b58900);
+    background: var(--surface-muted, rgba(0, 0, 0, 0.03));
+    border-radius: 0 4px 4px 0;
+  }
+  .author-bio-avatar {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 35% 35%;
+    background: #eee;
+  }
+  .author-bio-text-wrap {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .author-bio-name {
+    margin: 0 0 0.15rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .author-bio-name a {
+    text-decoration: none;
+  }
+  .author-bio-role {
+    margin: 0 0 0.6rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.75;
+  }
+  .author-bio-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  @media (max-width: 480px) {
+    .author-bio {
+      flex-direction: column;
+    }
+  }
+</style>

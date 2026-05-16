@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
 import TLDR from '../components/TLDR.astro';
+import AuthorBio from '../components/AuthorBio.astro';
 
 interface Aeo {
   tldr?: string;
@@ -45,33 +46,34 @@ const schemaType =
     ? 'Article'
     : entityType;
 
-const articleJsonLd = aeo
-  ? {
-      '@context': 'https://schema.org',
-      '@type': schemaType,
-      headline: title,
-      ...(description ? { description } : {}),
-      ...(date ? { datePublished: date.toISOString() } : {}),
-      author: {
-        '@type': 'Person',
-        name: author,
-        url: new URL('/about/', Astro.site).toString(),
-      },
-      ...(cover ? { image: new URL(cover, Astro.site).toString() } : {}),
-      mainEntityOfPage: canonicalURL,
-      ...(aeo.tldr ? { articleBody: aeo.tldr } : {}),
-      ...(entityType === 'Prediction' ? { additionalType: 'Prediction' } : {}),
-      ...(entityType === 'Theme' ? { articleSection: 'Annual Theme' } : {}),
-    }
-  : null;
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': schemaType,
+  headline: title,
+  ...(description ? { description } : {}),
+  ...(date ? { datePublished: date.toISOString() } : {}),
+  author: {
+    '@type': 'Person',
+    name: author,
+    url: new URL('/about/', Astro.site).toString(),
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Andy Woodruff',
+    url: new URL('/about/', Astro.site).toString(),
+  },
+  ...(cover ? { image: new URL(cover, Astro.site).toString() } : {}),
+  mainEntityOfPage: canonicalURL,
+  ...(aeo?.tldr ? { articleBody: aeo.tldr } : {}),
+  ...(entityType === 'Prediction' ? { additionalType: 'Prediction' } : {}),
+  ...(entityType === 'Theme' ? { articleSection: 'Annual Theme' } : {}),
+};
 ---
 
 <Base title={title} description={description} ogImage={cover}>
-  {articleJsonLd && (
-    <Fragment slot="head">
-      <script is:inline type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
-    </Fragment>
-  )}
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+  </Fragment>
   <article>
     {section && (
       <p class="post-meta">
@@ -93,6 +95,7 @@ const articleJsonLd = aeo
     {cover && <img src={cover} alt={title} />}
     {aeo?.tldr && <TLDR>{aeo.tldr}</TLDR>}
     <slot />
+    <AuthorBio />
     {newsletter && <NewsletterCTA variant="inline" />}
   </article>
 </Base>
