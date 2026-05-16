@@ -68,7 +68,22 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
             <span class="brand-role">Executive Director · OCME</span>
           </span>
         </a>
-        <ul>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          data-nav-toggle
+        >
+          <svg class="nav-toggle-icon nav-toggle-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+          <svg class="nav-toggle-icon nav-toggle-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M5 5l14 14M19 5l-14 14" />
+          </svg>
+        </button>
+        <ul id="primary-nav">
           <li><a href="/2034/">2034</a></li>
           <li><a href="/themes/">Themes</a></li>
           <li><a href="/projects/">Projects</a></li>
@@ -82,6 +97,22 @@ const resolvedOgImage = ogImage ? new URL(ogImage, Astro.site).toString() : unde
         <ThemeToggle />
       </nav>
     </header>
+    <script is:inline>
+      (function () {
+        const btn = document.querySelector('[data-nav-toggle]');
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          const open = document.body.toggleAttribute('data-nav-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        document.querySelectorAll('#primary-nav a').forEach((a) => {
+          a.addEventListener('click', () => {
+            document.body.removeAttribute('data-nav-open');
+            btn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      })();
+    </script>
     <main>
       <slot />
     </main>
