@@ -4,7 +4,7 @@ Guidance for Claude Code working in this repo. Stack and commands are documented
 
 ## Project Overview
 
-Andy Woodruff's personal site at [andywoodruff.net](https://andywoodruff.net) (the local repo dir is still named `theshiftingcurrent-com` from before the rebrand). Astro static site, deployed via Cloudflare Pages on push to `main`.
+Andy Woodruff's personal site at [andywoodruff.net](https://andywoodruff.net). Astro static site, deployed via Cloudflare Pages on push to `main`.
 
 ## Stack
 
