@@ -28,7 +28,7 @@
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
-  --space-4: 2.5rem;
+  --space-4: clamp(1.5rem, 1rem + 2vw, 2.5rem);
   --space-5: 4rem;
 
   /* Breakpoints — documentation references (CSS spec disallows
@@ -88,7 +88,7 @@ main {
   width: 100%;
   max-width: var(--measure);
   margin: 0 auto;
-  padding: var(--space-4) var(--space-2);
+  padding: var(--space-4) clamp(1rem, 0.5rem + 2vw, 1.5rem);
 }
 
 /* ---- Headings: Plex Sans, tight, decisive ---- */
@@ -685,7 +685,7 @@ th {
 .home-intro h1 {
   margin-top: 0;
   font-size: var(--fs-hero);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-2);
 }
 .home-intro .lede {
@@ -783,6 +783,7 @@ th {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+  row-gap: 0.4rem;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--color-muted);
@@ -796,6 +797,17 @@ th {
   margin-left: auto;
   color: var(--color-muted);
   transition: color 80ms ease;
+}
+
+@media (max-width: 480px) { /* --bp-sm */
+  .mission-meter-row {
+    /* Force giant accent number to its own line; separator + target
+       wrap to a second line as a mono caption beneath it */
+    row-gap: 0.35rem;
+  }
+  .mission-meter-now {
+    flex-basis: 100%;
+  }
 }
 
 /* ---- Currently block ---- */
