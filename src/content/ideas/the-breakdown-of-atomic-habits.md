@@ -1,7 +1,7 @@
 ---
 title: "When Execution Gets Cheap, Identity Becomes the Bottleneck"
 date: "2026-05-17T22:35:13.201Z"
-draft: true
+draft: false
 description: "When execution gets cheap, identity becomes the bottleneck — and every habit is a deposit into the bank of who you are."
 tags: ['identity', 'AI', 'personal']
 ---
