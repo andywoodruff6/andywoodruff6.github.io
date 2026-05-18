@@ -1,8 +1,7 @@
 ---
 const name = 'Andy Woodruff';
-const role = 'Executive Director, Open Commercial Media Ecosystem (OCME)';
 const bio =
-  'I co-chair the Human Experience Working Group at the Trust Over IP Foundation. I write about self-sovereign identity, creator-governed ecosystems, and the transition to Human 3.0. Background: ME engineering, PMP, product, smart contracts.';
+  'I’m the Executive Director of the Open Commercial Media Ecosystem (OCME), a 501(c)(6) member-governed nonprofit rebuilding the creator economy on top of cryptographically secure, tamper-evident identity. I write about self-sovereign identity, creator-governed ecosystems, and the transition to Human 3.0. Background: ME engineering, PMP, product, smart contracts.';
 const avatar = '/images/andy-soulscape.png';
 ---
 
@@ -12,8 +11,17 @@ const avatar = '/images/andy-soulscape.png';
     <p class="author-bio-name">
       <a href="/about/">{name}</a>
     </p>
-    <p class="author-bio-role">{role}</p>
     <p class="author-bio-text">{bio}</p>
+    <p class="author-bio-follow">
+      <a class="author-bio-follow-btn" href="https://x.com/WoodruffAndy" target="_blank" rel="noopener noreferrer" aria-label="Follow Andy on X">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>Follow on X</span>
+      </a>
+      <a class="author-bio-follow-btn" href="https://www.linkedin.com/in/andrew-woodruff-72b70075/" target="_blank" rel="noopener noreferrer" aria-label="Follow Andy on LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14M7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0"/></svg>
+        <span>Follow on LinkedIn</span>
+      </a>
+    </p>
   </div>
 </aside>
 
@@ -49,17 +57,42 @@ const avatar = '/images/andy-soulscape.png';
   .author-bio-name a {
     text-decoration: none;
   }
-  .author-bio-role {
-    margin: 0 0 0.6rem;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    opacity: 0.75;
-  }
   .author-bio-text {
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.5;
+  }
+  .author-bio-follow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.85rem 0 0;
+  }
+  .author-bio-follow-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--color-link);
+    border-radius: 4px;
+    color: var(--color-link);
+    font-family: var(--font-mono);
+    font-size: var(--fs-mono-sm);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 120ms ease, color 120ms ease;
+  }
+  .author-bio-follow-btn:hover,
+  .author-bio-follow-btn:focus-visible {
+    background: var(--color-link);
+    color: var(--color-bg);
+    outline: none;
+  }
+  .author-bio-follow-btn svg {
+    width: 1rem;
+    height: 1rem;
+    display: block;
   }
   @media (max-width: 480px) {
     .author-bio {

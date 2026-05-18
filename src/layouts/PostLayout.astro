@@ -3,6 +3,7 @@ import Base from './Base.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
 import TLDR from '../components/TLDR.astro';
 import AuthorBio from '../components/AuthorBio.astro';
+import ShareButtons from '../components/ShareButtons.astro';
 
 interface Aeo {
   tldr?: string;
@@ -95,6 +96,7 @@ const articleJsonLd = {
     {cover && <img src={cover} alt={title} />}
     {aeo?.tldr && <TLDR>{aeo.tldr}</TLDR>}
     <slot />
+    <ShareButtons title={title} url={canonicalURL} />
     <AuthorBio />
     {newsletter && <NewsletterCTA variant="inline" />}
   </article>
