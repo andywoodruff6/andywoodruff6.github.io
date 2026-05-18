@@ -27,3 +27,9 @@ hugo_stats.json
 
 # Claude Code project-local state
 .claude/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
