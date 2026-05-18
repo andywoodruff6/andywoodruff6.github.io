@@ -1,7 +1,7 @@
 {
   "name": "andywoodruff-site",
   "type": "module",
-  "version": "0.1.8",
+  "version": "0.1.12",
   "private": true,
   "scripts": {
     "dev": "astro dev",
